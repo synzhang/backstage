@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+
+  <title>Backstage</title>
+
+  <link rel="stylesheet" href="../styles/backstage.min.css" />
+  <link rel="stylesheet" href="../scripts/jscal2/css/jscal2.css" />
+  <link rel="stylesheet" href="../scripts/jscal2/css/win2k/win2k.css" />
+</head>
+<body>
+  <div class="container">
+    <form class="panel panel_ctrl">
+      <fieldset>
+        <label>日期：</label>
+        <input id="start_addtime" name="start_addtime" class="input_text" type="text" size="10" placeholder="开始日期" readonly />
+        &nbsp;-&nbsp;
+        <input id="end_addtime" name="end_addtime" class="input_text" type="text" size="10" placeholder="截止日期" readonly />
+
+        <span class="divider_inline">|</span>
+
+        <label>地点：</label>
+        <select>
+          <option value="">地点一</option>
+          <option value="">地点二</option>
+          <option value="">地点三</option>
+        </select>
+
+        <span class="divider_inline">|</span>
+
+        <input type="text" class="input_text" />
+
+        <button class="btn" type="submit">查询</button>
+      </fieldset>
+    </form>
+
+    <table class="table table_hover table_fluid">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th style="width: 50px;">姓名</th>
+          <th style="width: 25px;">年龄</th>
+          <th>证件类型</th>
+          <th>证件号码</th>
+          <th style="width: 25px;">性别</th>
+          <th style="width: 90px;">联系电话</th>
+          <th style="width: 75px;">时间戳</th>
+          <th>操作</th>
+        </tr>
+      </thead>
+      <tbody class="typo_center">
+        <tr>
+          <td>1601063</td>
+          <td>路人甲</td>
+          <td>25</td>
+          <td>身份证</td>
+          <td>123456789123456789</td>
+          <td>女</td>
+          <td>12345678912</td>
+          <td>
+            2013-01-24<br />
+            08:00-09:00<br />
+          </td>
+          <td>
+            <a href="#" class="typo_primary">打印单据</a>
+            <span class="divider_inline">|</span>
+            <a href="#" class="typo_danger">取消</a>
+            <span class="divider_inline">|</span>
+            <a href="#" class="typo_danger">删除</a>
+          </td>
+        </tr>
+        <tr>
+          <td>1601063</td>
+          <td>路人甲</td>
+          <td>25</td>
+          <td>身份证</td>
+          <td>123456789123456789</td>
+          <td>女</td>
+          <td>12345678912</td>
+          <td>
+            2013-01-24<br />
+            08:00-09:00<br />
+          </td>
+          <td>
+            <a href="#" class="typo_primary">打印单据</a>
+            <span class="divider_inline">|</span>
+            <a href="#" class="typo_danger">取消</a>
+            <span class="divider_inline">|</span>
+            <a href="#" class="typo_danger">删除</a>
+          </td>
+        </tr>
+        <tr>
+          <td>1601063</td>
+          <td>路人甲</td>
+          <td>25</td>
+          <td>身份证</td>
+          <td>123456789123456789</td>
+          <td>女</td>
+          <td>12345678912</td>
+          <td>
+            2013-01-24<br />
+            08:00-09:00<br />
+          </td>
+          <td>
+            <a href="#" class="typo_primary">打印单据</a>
+            <span class="divider_inline">|</span>
+            <a href="#" class="typo_danger">取消</a>
+            <span class="divider_inline">|</span>
+            <a href="#" class="typo_danger">删除</a>
+          </td>
+        </tr>
+        <tr>
+          <td>1601063</td>
+          <td>路人甲</td>
+          <td>25</td>
+          <td>身份证</td>
+          <td>123456789123456789</td>
+          <td>女</td>
+          <td>12345678912</td>
+          <td>
+            2013-01-24<br />
+            08:00-09:00<br />
+          </td>
+          <td>
+            <a href="#" class="typo_primary">打印单据</a>
+            <span class="divider_inline">|</span>
+            <a href="#" class="typo_danger">取消</a>
+            <span class="divider_inline">|</span>
+            <a href="#" class="typo_danger">删除</a>
+          </td>
+        </tr>
+        <tr>
+          <td>1601063</td>
+          <td>路人甲</td>
+          <td>25</td>
+          <td>身份证</td>
+          <td>123456789123456789</td>
+          <td>女</td>
+          <td>12345678912</td>
+          <td>
+            2013-01-24<br />
+            08:00-09:00<br />
+          </td>
+          <td>
+            <a href="#" class="typo_primary">打印单据</a>
+            <span class="divider_inline">|</span>
+            <a href="#" class="typo_danger">取消</a>
+            <span class="divider_inline">|</span>
+            <a href="#" class="typo_danger">删除</a>
+          </td>
+        </tr>
+        <tr>
+          <td>1601063</td>
+          <td>路人甲</td>
+          <td>25</td>
+          <td>身份证</td>
+          <td>123456789123456789</td>
+          <td>女</td>
+          <td>12345678912</td>
+          <td>
+            2013-01-24<br />
+            08:00-09:00<br />
+          </td>
+          <td>
+            <a href="#" class="typo_primary">打印单据</a>
+            <span class="divider_inline">|</span>
+            <a href="#" class="typo_danger">取消</a>
+            <span class="divider_inline">|</span>
+            <a href="#" class="typo_danger">删除</a>
+          </td>
+        </tr>
+        <tr>
+          <td>1601063</td>
+          <td>路人甲</td>
+          <td>25</td>
+          <td>身份证</td>
+          <td>123456789123456789</td>
+          <td>女</td>
+          <td>12345678912</td>
+          <td>
+            2013-01-24<br />
+            08:00-09:00<br />
+          </td>
+          <td>
+            <a href="#" class="typo_primary">打印单据</a>
+            <span class="divider_inline">|</span>
+            <a href="#" class="typo_danger">取消</a>
+            <span class="divider_inline">|</span>
+            <a href="#" class="typo_danger">删除</a>
+          </td>
+        </tr>
+        <tr>
+          <td>1601063</td>
+          <td>路人甲</td>
+          <td>25</td>
+          <td>身份证</td>
+          <td>123456789123456789</td>
+          <td>女</td>
+          <td>12345678912</td>
+          <td>
+            2013-01-24<br />
+            08:00-09:00<br />
+          </td>
+          <td>
+            <a href="#" class="typo_primary">打印单据</a>
+            <span class="divider_inline">|</span>
+            <a href="#" class="typo_danger">取消</a>
+            <span class="divider_inline">|</span>
+            <a href="#" class="typo_danger">删除</a>
+          </td>
+        </tr>
+        <tr>
+          <td>1601063</td>
+          <td>路人甲</td>
+          <td>25</td>
+          <td>身份证</td>
+          <td>123456789123456789</td>
+          <td>女</td>
+          <td>12345678912</td>
+          <td>
+            2013-01-24<br />
+            08:00-09:00<br />
+          </td>
+          <td>
+            <a href="#" class="typo_primary">打印单据</a>
+            <span class="divider_inline">|</span>
+            <a href="#" class="typo_danger">取消</a>
+            <span class="divider_inline">|</span>
+            <a href="#" class="typo_danger">删除</a>
+          </td>
+        </tr>
+        <tr>
+          <td>1601063</td>
+          <td>路人甲</td>
+          <td>25</td>
+          <td>身份证</td>
+          <td>123456789123456789</td>
+          <td>女</td>
+          <td>12345678912</td>
+          <td>
+            2013-01-24<br />
+            08:00-09:00<br />
+          </td>
+          <td>
+            <a href="#" class="typo_primary">打印单据</a>
+            <span class="divider_inline">|</span>
+            <a href="#" class="typo_danger">取消</a>
+            <span class="divider_inline">|</span>
+            <a href="#" class="typo_danger">删除</a>
+          </td>
+        </tr>
+        <tr>
+          <td>1601063</td>
+          <td>路人甲</td>
+          <td>25</td>
+          <td>身份证</td>
+          <td>123456789123456789</td>
+          <td>女</td>
+          <td>12345678912</td>
+          <td>
+            2013-01-24<br />
+            08:00-09:00<br />
+          </td>
+          <td>
+            <a href="#" class="typo_primary">打印单据</a>
+            <span class="divider_inline">|</span>
+            <a href="#" class="typo_danger">取消</a>
+            <span class="divider_inline">|</span>
+            <a href="#" class="typo_danger">删除</a>
+          </td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td class="typo_right" colspan="12">{分页}</td>
+        </tr>
+      </tfoot>
+    </table>
+
+    <table class="table table_hover table_fluid">
+      <caption>
+        <span class="typo_inverse">地点一</span>&nbsp;
+        <span class="typo_inverse">2013年03周</span>&nbsp;时刻表
+        <strong class="typo_inverse">（已审核）</strong>
+      </caption>
+      <thead>
+        <tr>
+          <th colspan="2">日期</th>
+          <th>2013-01-21</th>
+          <th>2013-01-22</th>
+          <th>2013-01-23</th>
+          <th>2013-01-24</th>
+          <th>2013-01-25</th>
+          <th>2013-01-26</th>
+          <th>2013-01-27</th>
+        </tr>
+        <tr>
+          <th>上、下午</th>
+          <th>时间</th>
+          <th>星期一</th>
+          <th>星期二</th>
+          <th>星期三</th>
+          <th>星期四</th>
+          <th>星期五</th>
+          <th>星期六</th>
+          <th>星期日</th>
+        </tr>
+      </thead>
+      <tbody class="typo_center">
+        <tr>
+          <th rowspan="3">上午</th>
+          <td>09:00-10:00</td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+        </tr>
+        <tr>
+          <td>10:00-11:00</td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+        </tr>
+        <tr>
+          <td>11:00-12:00</td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+        </tr>
+        <tr>
+          <th rowspan="3">下午</th>
+          <td>14:30-15:30</td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+        </tr>
+        <tr>
+          <td>15:30-16:30</td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+        </tr>
+        <tr>
+          <td>16:30-17:30</td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td class="typo_right" colspan="10"></td>
+        </tr>
+      </tfoot>
+    </table>
+  </div><!-- END .container -->
+
+  <script src="../scripts/jquery-1.9.1.min.js"></script>
+  <script src="../scripts/jquery.fixedHead.js"></script>
+  <script src="../scripts/jscal2/js/jscal2.js"></script>
+  <script src="../scripts/jscal2/js/lang/cn.js"></script>
+  <script src="../scripts/public.js"></script>
+  <script>
+  $(function() {
+    Calendar.setup({
+      weekNumbers: true,
+      inputField : "start_addtime",
+      trigger    : "start_addtime",
+      dateFormat : "%Y-%m-%d",
+      showTime   : false,
+      minuteStep : 1,
+      onSelect   : function() {this.hide();}
+    });
+
+    Calendar.setup({
+      weekNumbers: true,
+      inputField : "end_addtime",
+      trigger    : "end_addtime",
+      dateFormat : "%Y-%m-%d",
+      showTime   : false,
+      minuteStep : 1,
+      onSelect   : function() {this.hide();}
+    });
+  });
+  </script>
+</body>
+</html>

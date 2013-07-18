@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+
+	<title>Backstage</title>
+
+	<link rel="stylesheet" href="styles/backstage.min.css" />
+	<style>
+	html, body {
+		border: none;
+		height: 100%;
+		width: 100%;
+	}
+	</style>
+</head>
+<body>
+	<div class="header clearfix">
+		<a class="logo fleft" href="#">
+			<img src="images/logo.png" alt="Logo" width="136" height="80" />
+		</a>
+
+		<h1 class="sitename fleft">Backstage</h1>
+
+		<div class="userinfo fright fixed-fmg">
+			欢迎您，用户名&nbsp;[角色]
+			<span class="divider_inline">|</span>
+			<a href="#" target="_blank">站点首页</a>
+			<span class="divider_inline">|</span>
+			<a href="#">退出</a>
+		</div>
+
+		<div class="nav nav_major">
+			<h2 class="nav-item is-nav-item_on on">
+				<a href="#menu_1" data-toggle="tab">栏目一</a>
+			</h2>
+
+			<h2 class="nav-item">
+				<a href="#menu_2" data-toggle="tab">栏目二</a>
+			</h2>
+		</div>
+	</div><!-- END .header -->
+
+	<div id="aside_left" class="aside">
+		<div class="menu" id="menu_1">
+			<h3 class="menu-hd js-accordion-head">菜单一</h3>
+			<div class="menu-bd js-accordion-body">
+				<a class="menu-item" href="templates/table.html" target="mainframe">表格</a>
+        <a class="menu-item" href="templates/form.html" target="mainframe">表单</a>
+        <a class="menu-item" href="templates/dialog.html" target="mainframe">对话框</a>
+			</div>
+
+			<h3 class="menu-hd js-accordion-head">菜单二</h3>
+			<div class="menu-bd js-accordion-body" style="display: none;">
+			</div>
+		</div>
+
+		<div class="menu" id="menu_2" style="display: none;">
+			<h3 class="menu-hd js-accordion-head">菜单一</h3>
+			<div class="menu-bd js-accordion-body">
+				<a class="menu-item" href="templates/tab.html" target="mainframe">选项卡</a>
+			</div>
+		</div>
+	</div><!-- END .aside -->
+
+	<a id="switcher_aside_left"
+		class="switcher switcher_vertical switcher_aside is-switcher_vertical_on"
+		title="关闭/打开侧边栏">
+	</a><!-- END .switcher -->
+
+	<div id="crumbbar" class="crumb">
+		当前位置：<span id="crumb">首页</span>
+		<!--[if lt IE 8]><div class="fright"></div><![endif]-->
+	</div><!-- END .crumb -->
+
+	<div id="maincontainer" class="maincontainer">
+		<iframe name="mainframe" class="main" src="" frameborder="0"></iframe>
+	</div><!-- END .maincontainer -->
+
+	<div id="loading" style="display: none;">正在加载...</div><!-- END #loading -->
+
+	<script src="scripts/jquery-1.9.1.min.js"></script>
+	<script src="scripts/jquery.tab.js"></script>
+	<script src="scripts/jquery.accordion.js"></script>
+	<script>
+	$(function() {
+		var $html = $('html'),
+		asideLeftShow = true,
+		offsetOfSidebar = $('#switcher_aside_left').offset().left;
+
+		$('.menu').accordion({
+			accordionHead: '.js-accordion-head',
+			accordionBody: '.js-accordion-body',
+			onClassHead: 'is-menu-hd_on'
+		});
+
+		$('.menu-item').on('click', function(e) {
+			$('.menu-item').removeClass('is-menu-item_on');
+			$(this).addClass('is-menu-item_on');
+			$('#crumb').text($(this)
+				.parent('.menu-bd')
+				.siblings('.is-menu-hd_on:visible')
+				.text()
+				+ ' - '
+				+ $('.is-menu-item_on')
+				.text());
+		});
+
+		$('#switcher_aside_left').on('click', function() {
+			asideLeftShow = !asideLeftShow;
+			var offset = asideLeftShow ? (0 - offsetOfSidebar) : offsetOfSidebar;
+
+			$('#aside_left')[asideLeftShow ? 'show' : 'hide']();
+
+			$('#switcher_aside_left').css('left', function() {
+				return $(this).offset().left - offset;
+			});
+
+			if (asideLeftShow) {
+				$('#switcher_aside_left').removeClass('is-switcher_vertical_off')
+				.addClass('is-switcher_vertical_on');
+			} else {
+				$('#switcher_aside_left').removeClass('is-switcher_vertical_on')
+				.addClass('is-switcher_vertical_off');
+			}
+
+			$('#maincontainer').css('left', function() {
+				return $(this).offset().left - offset;
+			});
+			if ($html.hasClass('lt-ie7')) {
+				adaptiveWH('.maincontainer', 'width');
+			}
+
+			$('#crumbbar').css('left', function() {
+				return $(this).offset().left - offset;
+			});
+		});
+
+    /**
+     * 兼容性处理
+     */
+    if ($html.hasClass('lt-ie7')) {
+      // IE 6
+      // .aside 高度似乎只有一行高，没自适应剩余高度。
+      adaptiveWH('.aside', 'height');
+      // $(window).on('resize', adaptiveWH('.aside', 'height'));
+      // .maincontainer 宽度超出自身 left 大小的宽度，高度超出自身 top 大小的高度。
+      adaptiveWH('.maincontainer', 'width');
+      adaptiveWH('.maincontainer', 'height');
+      // $(window).on('resize', adaptiveWH('.maincontainer', 'width'));
+      // $(window).on('resize', adaptiveWH('.maincontainer', 'height'));
+      adaptiveWH('.switcher_aside', 'height');
+      // $(window).on('resize', adaptiveWH('.switcher_aside', 'height'));
+    } else if ($html.hasClass('lt-ie8') && !$html.hasClass('lt-ie7')) {
+      // IE 7
+      // .main(iframe) 高度没自适应为 100%。
+      $('.main').css('height', function() {
+          return $(this).parent().height();
+      });
+    }
+  });
+
+  /**
+   * 自适应剩余宽度或高度
+   * @param  {Object} elem 选择器，指需要自适应宽度或高度的元素。
+   * @param  {String} attr 'width' 或者 'height'。
+   * @return {null}
+   */
+  function adaptiveWH(elem, attr) {
+   	var attr = attr.toLowerCase();
+   	if (attr === 'width' || attr === 'height') {
+   		$(elem).css(attr, function() {
+   			return $(this).parent()[attr === 'width' ? 'width' : 'height']()
+   			- parseInt($(this).css(attr === 'width' ? 'left' : 'top'), 10)
+   			- parseInt($(this).css(attr === 'width' ? 'right' : 'bottom'), 10);
+   		});
+   	}
+  }
+  </script>
+</body>
+</html>

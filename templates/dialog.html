@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+
+  <title>Backstage</title>
+
+  <link rel="stylesheet" href="../styles/backstage.min.css" />
+  <link rel="stylesheet" href="../scripts/artDialog/skins/default.css">
+</head>
+<body>
+  <div class="container">
+    <div class="nav nav_minor">
+      <h4 class="nav-item is-nav-item_on">
+        <a href="#">子栏目一</a>
+      </h4>
+      <span class="divider_inline">|</span>
+      <h4 class="nav-item">
+        <a href="#">子栏目二</a>
+      </h4>
+    </div>
+
+    <table class="table table_hover table_fluid">
+      <thead>
+        <tr>
+          <th style="width: 45px;">序号</th>
+          <th>类别</th>
+          <th>操作</th>
+        </tr>
+      </thead>
+      <tbody class="typo_center">
+        <tr>
+          <td>1</td>
+          <td>类别一</td>
+          <td>
+            <a class="business-admin-btn typo_primary" href="javascript:;">增加子类</a>
+            <span class="divider_inline">|</span>
+            <a class="typo_primary" href="javascript:;">修改</a>
+            <span class="divider_inline">|</span>
+            <a class="typo_danger" href="javascript:;">禁用</a>
+            <span class="divider_inline">|</span>
+            <a class="typo_danger" href="javascript:;">删除</a>
+          </td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>类别二</td>
+          <td>
+            <a class="business-admin-btn typo_primary" href="javascript:;">增加子类</a>
+            <span class="divider_inline">|</span>
+            <a class="typo_primary" href="javascript:;">修改</a>
+            <span class="divider_inline">|</span>
+            <a class="typo_danger" href="javascript:;">禁用</a>
+            <span class="divider_inline">|</span>
+            <a class="typo_danger" href="javascript:;">删除</a>
+          </td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>类别三</td>
+          <td>
+            <a class="business-admin-btn typo_primary" href="javascript:;">增加子类</a>
+            <span class="divider_inline">|</span>
+            <a class="typo_primary" href="javascript:;">修改</a>
+            <span class="divider_inline">|</span>
+            <a class="typo_danger" href="javascript:;">禁用</a>
+            <span class="divider_inline">|</span>
+            <a class="typo_danger" href="javascript:;">删除</a>
+          </td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td class="typo_right" colspan="4">{分页}</td>
+        </tr>
+      </tfoot>
+    </table>
+  </div><!-- END .container -->
+
+  <form id="business-admin-form" style="display: none;">
+    <div class="nav nav_minor">类别一&nbsp;>&nbsp;子类别一</div>
+
+    <fieldset>
+      <table class="table table_form table_nborder table_fluid">
+        <tbody>
+          <tr>
+            <th>
+              <label>表单项一：</label>
+            </th>
+            <td>
+              <input type="text" class="input_text" />
+            </td>
+          </tr>
+          <tr>
+            <th>
+              <label>文本描述：</label>
+            </th>
+            <td>
+              <textarea cols="60" rows="10"></textarea>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </fieldset>
+  </form>
+
+  <script src="../scripts/jquery-1.9.1.min.js"></script>
+  <script src="../scripts/jquery.fixedHead.js"></script>
+  <script src="../scripts/artDialog/artDialog.js"></script>
+  <script src="../scripts/public.js"></script>
+  <script>
+  $('.business-admin-btn').on('click.artdialog', function() {
+    art.dialog({
+      content: document.getElementById('business-admin-form'),
+      title: '新增子类别',
+      button: [
+        {
+          name: '提交',
+          callback: function() {
+            alert('开始保存。');
+          }
+        },
+        {
+          name: '取消'
+        }
+      ]
+    });
+  });
+  </script>
+</body>
+</html>

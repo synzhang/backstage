@@ -1,0 +1,201 @@
+{include file="start.html"}
+    <link rel="stylesheet" href="../script/chosen/chosen.min.css">
+</head>
+<body>
+    <div class="admin">
+        <form class="form" action="/index.php?c=Finance&a=unitsetting&unit_id={$unitid}" method="post">
+            <fieldset>
+                <legend>医院支付设置</legend>
+                <table class="table table_form table_fluid">
+                    <tbody>
+                        <tr class="form-item">
+                            <th class="form-key">
+                                <label for="unit_id"><span class="typo_danger">*</span>医院：</label>
+                            </th>
+                            <td class="form-value">
+                                <select class="grid-4" name="unit_id" id="unitid" required data-validation-empty="请选择医院" data-validation-placement="right">
+                                    <option value="0">-请选择-</option>
+                                    {foreach from=$unitlist key=key item=unit}
+                                    <option value="{$unit.unit_id}" {if $unitid == $unit.unit_id}selected{/if}>{$unit.unit_name}</option>
+                                    {/foreach}
+                                </select>
+                            </td>
+                        </tr>
+                        <tr class="form-item">
+                            <th class="form-key">
+                                <label><span class="typo_danger">*</span>是否开通财务结算：</label>
+                            </th>
+                            <td class="form-value">
+                                <label><input type="radio" name="status" required value="1" {if $finance_note.status == 1}checked{/if}/>&nbsp;开启</label>
+                                &nbsp;&nbsp;
+                                <label><input type="radio" name="status" required value="0" {if $finance_note.status == 0}{/if}/>&nbsp;关闭</label>
+                            </td>
+                        </tr>
+                        <!--
+                        <tr class="form-item">
+                            <th class="form-key">
+                                <label><span class="typo_danger">*</span>开通类型：</label>
+                            </th>
+                            <td class="form-value">
+                                <label><input type="checkbox">&nbsp;全部开通</label>&nbsp;&nbsp;
+                                <label><input type="checkbox">&nbsp;支付宝</label>&nbsp;&nbsp;
+                                <label><input type="checkbox">&nbsp;财付通</label>&nbsp;&nbsp;
+                                <label><input type="checkbox">&nbsp;快钱</label>&nbsp;&nbsp;
+                                <label><input type="checkbox">&nbsp;银联</label>
+                            </td>
+                        </tr>
+                        -->
+                        <tr class="form-item">
+                            <th class="form-key">
+                                <label><span class="typo_danger">*</span>收款人/公司：</label>
+                            </th>
+                            <td class="form-value">
+                                <input class="input_text" size="40" type="text" required data-parent=".form-item" data-validation-empty="请填写收款人/公司"  data-validation-placement="right" name="company" value="{$finance_note.company}" />
+                            </td>
+                        </tr>
+                        <tr class="form-item">
+                            <th class="form-key">
+                                <label><span class="typo_danger">*</span>收款账号：</label>
+                            </th>
+                            <td class="form-value">
+                                <input class="input_text" size="40" required type="text" data-parent=".form-item" data-type="number" data-validation-empty="请填写收款账号" data-validation-error="收款账号有误，请重新填写" data-validation-placement="right" name="account" value="{$finance_note.account}" />
+                            </td>
+                        </tr>
+                        <tr class="form-item">
+                            <th class="form-key">
+                                <label><span class="typo_danger">*</span>收款银行：</label>
+                            </th>
+                            <td class="form-value">
+                                <input class="input_text" size="40" required type="text" data-parent=".form-item" data-validation-empty="请填写收款银行" data-validation-placement="right" name="bank" value="{$finance_note.bank}" />
+                            </td>
+                        </tr>
+                        <tr class="form-item">
+                            <th class="form-key">
+                                <label for="cycle"><span class="typo_danger">*</span>结算周期：</label>
+                            </th>
+                            <td class="form-value">
+                                <select name="cycle" id="cycle" required data-parent=".form-item" data-validation-empty="请选择结算周期" data-validation-placement="right">
+                                    <option value="0">-请选择-</option>
+                                    <option value="1">1个月</option>
+                                    <option value="2">2个月</option>
+                                    <option value="3">3个月</option>
+                                    <option value="4">4个月</option>
+                                    <option value="5">5个月</option>
+                                    <option value="6">6个月</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr class="form-item">
+                            <th class="form-key">
+                                <label for="closeday"><span class="typo_danger">*</span>结算日：</label>
+                            </th>
+                            <td class="form-value">
+                                <select name="closeday" id="closeday" required data-parent=".form-item" data-validation-empty="请选择结算日" data-validation-placement="right">
+                                    <option value="0">-请选择-</option>
+                                    <option value="15">15日</option>
+                                    <option value="25">25日</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr class="form-item">
+                            <th class="form-key">
+                                <label><span class="typo_danger">*</span>医院负责人：</label>
+                            </th>
+                            <td class="form-value">
+                                <input class="input_text" size="40" type="text" required data-parent=".form-item" data-validation-empty="请填写医院负责人"  data-validation-placement="right" name="charger" value="{$finance_note.charger}" />
+                            </td>
+                        </tr>
+                        <tr class="form-item">
+                            <th class="form-key">
+                                <label><span class="typo_danger">*</span>手机号码：</label>
+                            </th>
+                            <td class="form-value">
+                                <input class="input_text" size="40" type="tel" required data-parent=".form-item" data-type="mobilephone" data-validation-empty="请填写手机号码" data-validation-error="手机号码有误，请重新填写" data-validation-placement="right" name="chargermobile" value="{$finance_note.chargermobile}" />
+                            </td>
+                        </tr>
+                        <tr class="form-item">
+                            <th class="form-key">
+                                <label><span class="typo_danger">*</span>邮箱地址：</label>
+                            </th>
+                            <td class="form-value">
+                                <input class="input_text" size="40" type="email" required data-parent=".form-item" data-validation-empty="请填写邮箱地址" data-validation-error="邮箱地址有误，请重新填写" data-validation-placement="right" name="chargeremail" value="{$finance_note.chargeremail}" />
+                            </td>
+                        </tr>
+                        <tr class="form-item">
+                            <th class="form-key">
+                                <label><span class="typo_danger">*</span>QQ：</label>
+                            </th>
+                            <td class="form-value">
+                                <input class="input_text" size="40" type="text" required data-parent=".form-item" data-type="qq" data-validation-empty="请填写QQ" data-validation-error="QQ有误，请重新填写" data-validation-placement="right" name="chargerqq" value="{$finance_note.chargerqq}" />
+                            </td>
+                        </tr>
+                        <tr class="form-item">
+                            <th class="form-key">
+                                <label><span class="typo_danger">*</span>医院备用负责人：</label>
+                            </th>
+                            <td class="form-value">
+                                <input class="input_text" size="40" type="text" required data-parent=".form-item" data-validation-empty="请填写医院备用负责人" data-validation-placement="right" name="bakcharger" value="{$finance_note.bakcharger}" />
+                            </td>
+                        </tr>
+                        <tr class="form-item">
+                            <th class="form-key">
+                                <label><span class="typo_danger">*</span>手机号码：</label>
+                            </th>
+                            <td class="form-value">
+                                <input class="input_text" size="40" type="tel" required data-parent=".form-item" data-type="mobilephone" data-validation-empty="请填写手机号码" data-validation-error="手机号码有误，请重新填写" data-validation-placement="right" name="bakchargermobile" value="{$finance_note.bakchargermobile}" />
+                            </td>
+                        </tr>
+                        <tr class="form-item">
+                            <th class="form-key">
+                                <label><span class="typo_danger">*</span>邮箱地址：</label>
+                            </th>
+                            <td class="form-value">
+                                <input class="input_text" size="40" type="email" required data-parent=".form-item" data-validation-empty="请填写邮箱地址" data-validation-error="邮箱地址有误，请重新填写" data-validation-placement="right" name="bakchargeremail" value="{$finance_note.bakchargeremail}" />
+                            </td>
+                        </tr>
+                        <tr class="form-item">
+                            <th class="form-key">
+                                <label><span class="typo_danger">*</span>QQ：</label>
+                            </th>
+                            <td class="form-value">
+                                <input class="input_text" size="40" type="text" required data-parent=".form-item" data-type="qq" data-validation-empty="请填写QQ" data-validation-error="QQ有误，请重新填写" data-validation-placement="right" name="bakchargerqq" value="{$finance_note.bakchargerqq}" />
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <input class="btn" type="submit" value="提交" />
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </fieldset>
+        </form>
+    </div>
+
+    <script src="../script/chosen/chosen.jquery.min.js"></script>
+    <script src="../script/validator.min.js"></script>
+    <script>
+        var unit_id = '{$unitid}';
+        var cycle = '{$finance_note.cycle}';
+        var closeday = '{$finance_note.closeday}';
+        {literal}
+        $(function(){
+            $('#unitid').chosen().on('change', function() {
+                changeunitid(this.value);
+            });
+
+        	$('#unitid').val(unit_id);
+        	$('#cycle').val(cycle);
+        	$('#closeday').val(closeday);
+        })
+
+        function changeunitid(unitid){
+        	var url = '/index.php?c=Finance&a=unitsetting&unit_id=' + unitid;
+        	location.href = url;
+        }
+        {/literal}
+    </script>
+{include file="end.html"}

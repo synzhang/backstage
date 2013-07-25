@@ -721,13 +721,13 @@ iframe {
    ========================================================================== */
 
 .nav {}
-.nav-item {
+.tab-title {
   display: inline-block;
   *display: inline;
   margin: 0;
   *zoom: 1;
 }
-.nav-item a {
+.tab-title a {
   cursor: pointer;
   display: inline-block;
   *display: inline;
@@ -735,50 +735,50 @@ iframe {
   vertical-align: top;
   *zoom: 1;
 }
-.nav-item a:hover {
+.tab-title a:hover {
   text-decoration: none;
 }
 
 .nav_major {margin-top: 46px;} /* @todo */
-.nav_major .nav-item,
-.nav_major .nav-item a {
+.nav_major .tab-title,
+.nav_major .tab-title a {
   background: url(../images/btn_bg.gif) no-repeat;
   height: 34px;
   line-height: 34px;
 }
-.nav_major .nav-item {
+.nav_major .tab-title {
   padding-left: 12px;
 }
-.nav_major .nav-item a {
+.nav_major .tab-title a {
   background-position: right top;
   font-size: 14px;
   font-weight: 700;
   padding-right: 12px;
 }
-.nav_major .is-nav-item_on {background-position: left -43px;}
-.nav_major .is-nav-item_on a {background-position: right -43px;color: #3A6EA5;}
+.nav_major .is-tab-title_on {background-position: left -43px;}
+.nav_major .is-tab-title_on a {background-position: right -43px;color: #3A6EA5;}
 
 .nav_minor {
   border-bottom: 1px solid #EEE;
   margin-bottom: 10px;
   padding-bottom: 8px;
 }
-.nav_minor .nav-item,
-.nav_minor .nav-item a {
+.nav_minor .tab-title,
+.nav_minor .tab-title a {
   height: 30px;
   line-height: 30px;
 }
-.nav_minor .nav-item {
+.nav_minor .tab-title {
   padding-left: 2px;
 }
-.nav_minor .nav-item a {
+.nav_minor .tab-title a {
   color: #4B8BCE;
   padding: 0 5px;
 }
-.nav_minor .is-nav-item_on {
+.nav_minor .is-tab-title_on {
   background: url(../images/btn_bg.gif) no-repeat left -125px;
 }
-.nav_minor .is-nav-item_on a {
+.nav_minor .is-tab-title_on a {
   background: url(../images/btn_bg.gif) no-repeat right -125px;
   color: #FFF;
 }
@@ -1096,6 +1096,17 @@ a.btn, a.btn:hover {
   box-shadow: rgba(0, 0, 0, 0.14902) 0px 3px 5px inset;
 }
 
+/* Tab
+   ========================================================================== */
+
+.tab-pane {
+	display: none;
+}
+
+.no-js .tab-pane {
+	display: block;
+}
+
 /* Tag
    ========================================================================== */
 
@@ -1389,6 +1400,15 @@ a.btn, a.btn:hover {
 
 .invisible {
   visibility: hidden;
+}
+
+/**
+ * 此分支兼容旧浏览器，不需考虑是否会影响到 display 为 CSS 3 以上标准中
+ * 定义的其他值。
+ */
+
+.on {
+	display: block;
 }
 
 /**

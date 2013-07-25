@@ -7,29 +7,30 @@
 	// Tab Public Class Definition
 	// ===========================
 
-	var Tab = function(element) {
+	var Tab = function(element, options) {
 		this.$element = $(element);
+		this.options  = options;
 	};
 
 	Tab.prototype.show = function() {
-		var $tabPane = $(this.$element.attr('href')),
-				$tabTitle = this.$element.data('parent') === '' ||
-					this.$element.data('parent') === undefined ?
-					this.$element : this.$element.parents(this.$element.data('parent'));
+		var indicator  = this.$element.data('indicator'),
+				$tabPane   = $(this.$element.attr('href')),
+				$tabTitle  = indicator === '' || indicator === undefined ?
+					this.$element : this.$element.parents(indicator);
 
-		$tabTitle.addClass('on').siblings().removeClass('on');
-		$tabPane.show().siblings().hide();
+		// @todo 使用 .siblings() 的话对 DOM 结构有一定的约束。
+		$tabTitle.addClass(this.options.activeTitleClass)
+			.siblings().removeClass(this.options.activeTitleClass);
+		$tabPane.show().addClass(this.options.activePaneClass)
+			.siblings().hide().removeClass(this.options.activePaneClass);
 	};
 
 	// Tab Default Options
 
-	/**
-	 * 1. 是否需要自定义选中状态的 CSS Class？
-	 */
-
-	/*Tab.DEFAULTS = {
-		'activeClass': 'on' // 1
-	};*/
+	Tab.defaults = {
+		'activeTitleClass': 'on',
+		'activePaneClass' : 'on'
+	};
 
 
 	// Tab jQuery Plugin Definition
@@ -43,13 +44,13 @@
 					data    = $this.data('tab'),
 					options = $.extend(
 						{},
-						Tab.DEFAULTS,
+						Tab.defaults,
 						$this.data(),
 						typeof option === 'object' && option
 					);
 
 			if (!data) {
-				data = new Tab(this);
+				data = new Tab(this, options);
 				$this.data('tab', data);
 			}
 
@@ -75,19 +76,6 @@
 	$(document).on('click.tab.data-api', '[data-toggle="tab"]', function(e) {
 		e.preventDefault();
 		$(this).tab('show');
-	});
-
-
-	// Init
-	// ====
-
-	$(function() {
-		$('[data-toggle="tab"]').filter(function() {
-			var $this = $(this);
-
-			return $this.hasClass('on') ||
-							$this.parents($this.data('parent')).hasClass('on');
-		}).tab('show');
 	});
 
 })(window.jQuery);

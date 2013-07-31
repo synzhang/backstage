@@ -1107,6 +1107,38 @@ a.btn, a.btn:hover {
 	display: block;
 }
 
+/* Accordion
+   ========================================================================== */
+
+.accordion-head {
+	background: url(../images/icon_sprite.gif) no-repeat 105px -74px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  color: #275D96;
+  border-bottom: 1px solid #D9E4EA;
+  line-height: 24px;
+  height: 24px;
+  margin: 0 0 5px 0;
+}
+
+.is-accordion-head_on {
+	background-position: 100px -98px;
+}
+
+.accordion-body {
+	display: none;
+}
+
+.no-js .accordion-body {
+	display: block;
+}
+
+.accordion-head a {
+  color: #275D96;
+  text-decoration: none;
+}
+
 /* Tag
    ========================================================================== */
 
@@ -1469,25 +1501,6 @@ a.btn, a.btn:hover {
 }
 .lt-ie7 .aside {margin-top: 0;}
 
-.menu {width: 100%;}
-.menu-hd {
-  background: url(../images/icon_sprite.gif) no-repeat 105px -74px;
-  cursor: pointer;
-  font-size: 14px;
-  font-weight: bold;
-  color: #275D96;
-  border-bottom: 1px solid #D9E4EA;
-  line-height: 24px;
-  height: 24px;
-  margin: 0 0 5px 0;
-}
-.menu-hd a {
-  color: #275D96;
-  text-decoration: none;
-}
-.is-menu-hd_on {
-  background-position: 100px -98px;
-}
 .menu-item {
   color: #666;
   display: block;

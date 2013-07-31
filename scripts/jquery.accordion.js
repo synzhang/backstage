@@ -7,36 +7,31 @@
 	// Accordion Public Class Definition
 	// =================================
 
-	var Accordion = function() {
-		init: function(elem, options) {
-			var self = this;
-			self.$elem = $(elem);
-			self.options = $.extend({}, $.fn.accordion.options, options);
-			self.$accordionHead = self.$elem.children(self.options.accordionHead);
-			self.$accordionBody = self.$elem.children(self.options.accordionBody);
-			self.delay = self.options.event.indexOf('hover') === -1 ? 0 : 150;
+	var Accordion = function(element, options) {
+		this.$element = $(element);
+		this.options  = options;
+	};
 
-			self.$accordionBody.not(':first').hide();
+	Accordion.prototype.show = function() {
+		this.$element.addClass(this.options.activeHeadClass)
+			.next().show().addClass(this.options.activeBodyClass);
+	};
 
-			self.$accordionHead.on(self.options.event, function(e) {
-				self.activeHead = e.target;
-				self.$activeHead = $(e.target);
+	Accordion.prototype.hide = function() {
+		this.$element.removeClass(this.options.activeHeadClass)
+			.next().hide().removeClass(this.options.activeBodyClass);
+	};
 
-				self.$activeBody = self.$activeHead.next(self.options.accordionBody);
-				setTimeout(function() {
-					if (e.target === self.activeHead && !self.$activeBody.is(':visible')) {
-						self.$accordionBody.filter(':animated').stop(true, true);
-						if (self.options.showActiveOnly) self.$accordionBody.filter(':visible').hide();
-						self.$activeBody.show();
-					}
-				}, self.delay);
-			});
-		}
+	Accordion.prototype.toggle = function() {
+		this[this.$element.next().is(':visible') ? 'hide' : 'show']();
 	};
 
   // Accordion Default Options
 
-  Accordion.DEFAULTS = {};
+  Accordion.DEFAULTS = {
+		'activeHeadClass': 'on',
+		'activeBodyClass': 'on'
+  };
 
 
   // Accordion jQuery Plugin Definition
@@ -46,19 +41,18 @@
 
 	$.fn.accordion = function(option) {
 		return this.each(function() {
-			var $this = $(this),
-					data = $this.data('accordion'),
+			var $this   = $(this),
+					data    = $this.data('accordion'),
 					options = $.extend(
 						{},
 						Accordion.DEFAULTS,
+						$this.parents($this.data('parent')).data(),
 						$this.data(),
-						typeof option == 'object' && option
+						typeof option === 'object' && option
 					);
 
-			if (!data) {
-				data = new Accordion(this, option);
-				$this.data('accordion', data);
-			}
+			if (!data) $this.data('accordion', (data = new Accordion(this, options)));
+			if (typeof option === 'string') data[option]();
 		});
 	};
 
@@ -78,7 +72,26 @@
 	// ==================
 
 	$(document).on('click.accordion.data-api', '[data-toggle="accordion"]', function(e) {
-		$(this).accordion();
+		var $this          = $(this),
+				active         = $this.next().is(':visible'),
+				// @todo
+				showActiveOnly = $($this.data('parent')).data('showActiveOnly');
+
+		e.preventDefault();
+
+		if (showActiveOnly) {
+			if (!active) {
+				$this.accordion('show');
+				// @todo 待优化
+				$(this).parents($this.data('parent'))
+					.find('[data-toggle="accordion"]')
+					.filter('[data-parent="' + $this.data('parent') + '"]')
+					.not($this)
+					.accordion('hide');
+			}
+		} else {
+			$this.accordion('toggle');
+		}
 	});
 
 })(jQuery);

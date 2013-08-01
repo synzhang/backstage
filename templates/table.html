@@ -1,25 +1,47 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html> <!--<![endif]-->
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-
   <title>Backstage</title>
-
   <link rel="stylesheet" href="../styles/backstage.min.css" />
   <link rel="stylesheet" href="../scripts/jscal2/css/jscal2.css" />
   <link rel="stylesheet" href="../scripts/jscal2/css/win2k/win2k.css" />
+  <script>
+  	(function() {
+			var html = document.getElementsByTagName('html')[0];
+			html.className = html.className.replace('no-js', 'js');
+		})();
+	</script>
 </head>
 <body>
   <div class="container">
     <form class="panel panel_ctrl">
       <fieldset>
         <label>日期：</label>
-        <input id="start_addtime" name="start_addtime" class="input_text" type="text" size="10" placeholder="开始日期" readonly />
+        <input class="input_text"
+        	id="start_addtime"
+        	data-toggle="calendar"
+        	data-input-field="start_addtime"
+        	data-trigger="start_addtime"
+        	name="start_addtime"
+        	type="text"
+        	size="10"
+        	placeholder="开始日期"
+        	readonly />
         &nbsp;-&nbsp;
-        <input id="end_addtime" name="end_addtime" class="input_text" type="text" size="10" placeholder="截止日期" readonly />
+        <input class="input_text"
+        	id="end_addtime"
+        	data-toggle="calendar"
+        	data-input-field="end_addtime"
+        	data-trigger="end_addtime"
+        	name="end_addtime"
+        	type="text"
+        	size="10"
+        	placeholder="截止日期"
+        	readonly />
 
         <span class="divider_inline">|</span>
 
@@ -32,7 +54,7 @@
 
         <span class="divider_inline">|</span>
 
-        <input type="text" class="input_text" />
+        <input class="input_text" type="text" placeholder="提示文字" />
 
         <button class="btn" type="submit">查询</button>
       </fieldset>
@@ -380,35 +402,14 @@
         </tr>
       </tfoot>
     </table>
-  </div><!-- END .container -->
+  </div><!-- .container -->
 
   <script src="../scripts/jquery-1.9.1.min.js"></script>
-  <script src="../scripts/jquery.fixedHead.js"></script>
   <script src="../scripts/jscal2/js/jscal2.js"></script>
   <script src="../scripts/jscal2/js/lang/cn.js"></script>
-  <script src="../scripts/public.js"></script>
-  <script>
-  $(function() {
-    Calendar.setup({
-      weekNumbers: true,
-      inputField : "start_addtime",
-      trigger    : "start_addtime",
-      dateFormat : "%Y-%m-%d",
-      showTime   : false,
-      minuteStep : 1,
-      onSelect   : function() {this.hide();}
-    });
-
-    Calendar.setup({
-      weekNumbers: true,
-      inputField : "end_addtime",
-      trigger    : "end_addtime",
-      dateFormat : "%Y-%m-%d",
-      showTime   : false,
-      minuteStep : 1,
-      onSelect   : function() {this.hide();}
-    });
-  });
-  </script>
+  <script src="../scripts/jquery.calendar.js"></script>
+  <script src="../scripts/jquery.fixedHead.js"></script>
+  <!--[if lte IE 9]><script src="../scripts/placeholders.js"></script><![endif]-->
+  <!-- <script src="../scripts/public.js"></script> -->
 </body>
 </html>

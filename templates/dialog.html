@@ -1,15 +1,19 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html> <!--<![endif]-->
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-
   <title>Backstage</title>
-
   <link rel="stylesheet" href="../styles/backstage.min.css" />
   <link rel="stylesheet" href="../scripts/artDialog/skins/default.css">
+  <script>
+  	(function() {
+			var html = document.getElementsByTagName('html')[0];
+			html.className = html.className.replace('no-js', 'js');
+		})();
+	</script>
 </head>
 <body>
   <div class="container">
@@ -36,7 +40,11 @@
           <td>1</td>
           <td>类别一</td>
           <td>
-            <a class="business-admin-btn typo_primary" href="javascript:;">增加子类</a>
+            <a class="business-admin-btn typo_primary"
+            	data-toggle="dialog"
+            	data-title="新增子类别"
+            	data-content="#business-admin-form"
+            	href="javascript:;">增加子类</a>
             <span class="divider_inline">|</span>
             <a class="typo_primary" href="javascript:;">修改</a>
             <span class="divider_inline">|</span>
@@ -78,7 +86,7 @@
         </tr>
       </tfoot>
     </table>
-  </div><!-- END .container -->
+  </div><!-- / .container -->
 
   <form id="business-admin-form" style="display: none;">
     <div class="nav nav_minor">类别一&nbsp;>&nbsp;子类别一</div>
@@ -107,28 +115,8 @@
     </fieldset>
   </form>
 
-  <script src="../scripts/jquery-1.9.1.min.js"></script>
-  <script src="../scripts/jquery.fixedHead.js"></script>
+  <script src="../scripts/jquery.min.js"></script>
   <script src="../scripts/artDialog/artDialog.js"></script>
-  <script src="../scripts/public.js"></script>
-  <script>
-  $('.business-admin-btn').on('click.artdialog', function() {
-    art.dialog({
-      content: document.getElementById('business-admin-form'),
-      title: '新增子类别',
-      button: [
-        {
-          name: '提交',
-          callback: function() {
-            alert('开始保存。');
-          }
-        },
-        {
-          name: '取消'
-        }
-      ]
-    });
-  });
-  </script>
+  <script src="../scripts/jquery.dialog.js"></script>
 </body>
 </html>

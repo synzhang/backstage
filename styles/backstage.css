@@ -720,7 +720,6 @@ iframe {
 /* Navigation
    ========================================================================== */
 
-.nav {}
 .tab-title {
   display: inline-block;
   *display: inline;
@@ -860,19 +859,17 @@ iframe {
   font-weight: bold;
   text-align: left;
 }
-.table thead, .table tfoot, .fixedHead thead {
+.table thead, .table tfoot {
   background-color: #EEF3F7;
 }
 .table thead th,
-.fixedHead thead th,
 .table tfoot th {
   font-weight: normal;
   height: 30px;
   padding-left: 5px;
   padding-right: 5px;
 }
-.table thead th,
-.fixedHead thead th {
+.table thead th {
   border-bottom: 1px solid #D5DFE8;
 }
 .table tfoot th {
@@ -1100,18 +1097,20 @@ a.btn, a.btn:hover {
    ========================================================================== */
 
 .tab-pane {
-	display: none;
+  display: none;
 }
 
 .no-js .tab-pane {
-	display: block;
+  display: block;
 }
+
+[data-toggle='tab']:focus {outline: 0;}
 
 /* Accordion
    ========================================================================== */
 
 .accordion-head {
-	background: url(../images/icon_sprite.gif) no-repeat 105px -74px;
+  background: url(../images/icon_sprite.gif) no-repeat 105px -74px;
   cursor: pointer;
   font-size: 14px;
   font-weight: bold;
@@ -1123,15 +1122,15 @@ a.btn, a.btn:hover {
 }
 
 .is-accordion-head_on {
-	background-position: 100px -98px;
+  background-position: 100px -98px;
 }
 
 .accordion-body {
-	display: none;
+  display: none;
 }
 
 .no-js .accordion-body {
-	display: block;
+  display: block;
 }
 
 .accordion-head a {
@@ -1440,7 +1439,7 @@ a.btn, a.btn:hover {
  */
 
 .on {
-	display: block;
+  display: block;
 }
 
 /**
@@ -1512,6 +1511,9 @@ a.btn, a.btn:hover {
   background: url(../images/icon_sprite.gif) no-repeat left -38px;
   text-decoration: none;
 }
+.menu-item:focus {
+  outline: 0;
+}
 .is-menu-item_on {
   background: url(../images/icon_sprite.gif) no-repeat left top;
   color: #004499;
@@ -1568,8 +1570,23 @@ a.btn, a.btn:hover {
 }
 
 /**
+ * Overlay
+ */
+
+#overlay {
+  background-color: #000;
+  left: 0;
+  opacity: .4;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 2000;
+}
+
+/**
  * Loading
  */
+
 #loading {
   background-color: #fff1a8;
   border-radius: 3px;
@@ -1587,7 +1604,7 @@ a.btn, a.btn:hover {
   _position: absolute;
   text-align: center;
   width: 240px;
-  z-index: 2000;
+  z-index: 2001;
 }
 
 
@@ -1605,10 +1622,6 @@ a.btn, a.btn:hover {
 .lt-ie7, .lt-ie7 body {
   background-image: url(about:blank);
   background-attachment:fixed;
-}
-.lt-ie7 .fix-fixedtop {
-  position: absolute;
-  top: expression(eval(document.documentElement.scrollTop));
 }
 
 /* Button */

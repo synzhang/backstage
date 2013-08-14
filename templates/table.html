@@ -10,11 +10,11 @@
   <link rel="stylesheet" href="../scripts/jscal2/css/jscal2.css" />
   <link rel="stylesheet" href="../scripts/jscal2/css/win2k/win2k.css" />
   <script>
-  	(function() {
-			var html = document.getElementsByTagName('html')[0];
-			html.className = html.className.replace('no-js', 'js');
-		})();
-	</script>
+    (function() {
+      var html = document.getElementsByTagName('html')[0];
+      html.className = html.className.replace('no-js', 'js');
+    })();
+  </script>
 </head>
 <body>
   <div class="container">
@@ -22,26 +22,24 @@
       <fieldset>
         <label>日期：</label>
         <input class="input_text"
-        	id="start_addtime"
-        	data-toggle="calendar"
-        	data-input-field="start_addtime"
-        	data-trigger="start_addtime"
-        	name="start_addtime"
-        	type="text"
-        	size="10"
-        	placeholder="开始日期"
-        	readonly />
+          id="start_addtime"
+          data-toggle="calendar"
+          data-input-field="start_addtime"
+          data-trigger="start_addtime"
+          type="text"
+          size="10"
+          placeholder="开始日期"
+          readonly />
         &nbsp;-&nbsp;
         <input class="input_text"
-        	id="end_addtime"
-        	data-toggle="calendar"
-        	data-input-field="end_addtime"
-        	data-trigger="end_addtime"
-        	name="end_addtime"
-        	type="text"
-        	size="10"
-        	placeholder="截止日期"
-        	readonly />
+          id="end_addtime"
+          data-toggle="calendar"
+          data-input-field="end_addtime"
+          data-trigger="end_addtime"
+          type="text"
+          size="10"
+          placeholder="截止日期"
+          readonly />
 
         <span class="divider_inline">|</span>
 
@@ -54,14 +52,17 @@
 
         <span class="divider_inline">|</span>
 
-        <input class="input_text" type="text" placeholder="提示文字" />
+        <input class="input_text" type="text" placeholder="提示信息" />
 
         <button class="btn" type="submit">查询</button>
       </fieldset>
     </form>
 
     <table class="table table_hover table_fluid">
-      <thead>
+      <thead data-spy="fixedHead"
+        data-wrapper="table"
+        data-wrapper-class="table"
+        data-target="#tbody-1">
         <tr>
           <th>ID</th>
           <th style="width: 50px;">姓名</th>
@@ -74,7 +75,7 @@
           <th>操作</th>
         </tr>
       </thead>
-      <tbody class="typo_center">
+      <tbody id="tbody-1" class="typo_center">
         <tr>
           <td>1601063</td>
           <td>路人甲</td>
@@ -395,6 +396,192 @@
           <td><input type="checkbox" /></td>
           <td><input type="checkbox" /></td>
         </tr>
+        <tr>
+          <th rowspan="3">上午</th>
+          <td>09:00-10:00</td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+        </tr>
+        <tr>
+          <td>10:00-11:00</td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+        </tr>
+        <tr>
+          <td>11:00-12:00</td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+        </tr>
+        <tr>
+          <th rowspan="3">下午</th>
+          <td>14:30-15:30</td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+        </tr>
+        <tr>
+          <td>15:30-16:30</td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+        </tr>
+        <tr>
+          <td>16:30-17:30</td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+        </tr>
+        <tr>
+          <th rowspan="3">上午</th>
+          <td>09:00-10:00</td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+        </tr>
+        <tr>
+          <td>10:00-11:00</td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+        </tr>
+        <tr>
+          <td>11:00-12:00</td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+        </tr>
+        <tr>
+          <th rowspan="3">下午</th>
+          <td>14:30-15:30</td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+        </tr>
+        <tr>
+          <td>15:30-16:30</td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+        </tr>
+        <tr>
+          <td>16:30-17:30</td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+        </tr>
+        <tr>
+          <th rowspan="3">上午</th>
+          <td>09:00-10:00</td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+        </tr>
+        <tr>
+          <td>10:00-11:00</td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+        </tr>
+        <tr>
+          <td>11:00-12:00</td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+        </tr>
+        <tr>
+          <th rowspan="3">下午</th>
+          <td>14:30-15:30</td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+        </tr>
+        <tr>
+          <td>15:30-16:30</td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+        </tr>
+        <tr>
+          <td>16:30-17:30</td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+        </tr>
       </tbody>
       <tfoot>
         <tr>
@@ -402,14 +589,12 @@
         </tr>
       </tfoot>
     </table>
-  </div><!-- .container -->
+  </div><!-- / .container -->
 
-  <script src="../scripts/jquery-1.9.1.min.js"></script>
+  <script src="../scripts/jquery.min.js"></script>
   <script src="../scripts/jscal2/js/jscal2.js"></script>
   <script src="../scripts/jscal2/js/lang/cn.js"></script>
   <script src="../scripts/jquery.calendar.js"></script>
   <script src="../scripts/jquery.fixedHead.js"></script>
-  <!--[if lte IE 9]><script src="../scripts/placeholders.js"></script><![endif]-->
-  <!-- <script src="../scripts/public.js"></script> -->
 </body>
 </html>

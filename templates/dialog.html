@@ -7,13 +7,13 @@
   <meta charset="utf-8">
   <title>Backstage</title>
   <link rel="stylesheet" href="../styles/backstage.min.css" />
-  <link rel="stylesheet" href="../scripts/artDialog/skins/default.css">
+  <link rel="stylesheet" href="../scripts/lib/artDialog/skins/default.css">
   <script>
-  	(function() {
-			var html = document.getElementsByTagName('html')[0];
-			html.className = html.className.replace('no-js', 'js');
-		})();
-	</script>
+    (function() {
+      var html = document.getElementsByTagName('html')[0];
+      html.className = html.className.replace('no-js', 'js');
+    })();
+  </script>
 </head>
 <body>
   <div class="container">
@@ -41,10 +41,10 @@
           <td>类别一</td>
           <td>
             <a class="business-admin-btn typo_primary"
-            	data-toggle="dialog"
-            	data-title="新增子类别"
-            	data-content="#business-admin-form"
-            	href="javascript:;">增加子类</a>
+              data-toggle="dialog"
+              data-title="新增子类别"
+              data-content="#business-admin-form"
+              href="javascript:;">增加子类</a>
             <span class="divider_inline">|</span>
             <a class="typo_primary" href="javascript:;">修改</a>
             <span class="divider_inline">|</span>
@@ -115,8 +115,11 @@
     </fieldset>
   </form>
 
-  <script src="../scripts/jquery.min.js"></script>
-  <script src="../scripts/artDialog/artDialog.js"></script>
-  <script src="../scripts/jquery.dialog.js"></script>
+  <script src="../scripts/lib/require.js"></script>
+  <script>
+    require(['../scripts/common'], function(common) {
+      require(['app/main/dialog']);
+    });
+  </script>
 </body>
 </html>

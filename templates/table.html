@@ -7,8 +7,8 @@
   <meta charset="utf-8">
   <title>Backstage</title>
   <link rel="stylesheet" href="../styles/backstage.min.css" />
-  <link rel="stylesheet" href="../scripts/jscal2/css/jscal2.css" />
-  <link rel="stylesheet" href="../scripts/jscal2/css/win2k/win2k.css" />
+  <link rel="stylesheet" href="../scripts/lib/jscal2/css/jscal2.css" />
+  <link rel="stylesheet" href="../scripts/lib/jscal2/css/win2k/win2k.css" />
   <script>
     (function() {
       var html = document.getElementsByTagName('html')[0];
@@ -76,126 +76,6 @@
         </tr>
       </thead>
       <tbody id="tbody-1" class="typo_center">
-        <tr>
-          <td>1601063</td>
-          <td>路人甲</td>
-          <td>25</td>
-          <td>身份证</td>
-          <td>123456789123456789</td>
-          <td>女</td>
-          <td>12345678912</td>
-          <td>
-            2013-01-24<br />
-            08:00-09:00<br />
-          </td>
-          <td>
-            <a href="#" class="typo_primary">打印单据</a>
-            <span class="divider_inline">|</span>
-            <a href="#" class="typo_danger">取消</a>
-            <span class="divider_inline">|</span>
-            <a href="#" class="typo_danger">删除</a>
-          </td>
-        </tr>
-        <tr>
-          <td>1601063</td>
-          <td>路人甲</td>
-          <td>25</td>
-          <td>身份证</td>
-          <td>123456789123456789</td>
-          <td>女</td>
-          <td>12345678912</td>
-          <td>
-            2013-01-24<br />
-            08:00-09:00<br />
-          </td>
-          <td>
-            <a href="#" class="typo_primary">打印单据</a>
-            <span class="divider_inline">|</span>
-            <a href="#" class="typo_danger">取消</a>
-            <span class="divider_inline">|</span>
-            <a href="#" class="typo_danger">删除</a>
-          </td>
-        </tr>
-        <tr>
-          <td>1601063</td>
-          <td>路人甲</td>
-          <td>25</td>
-          <td>身份证</td>
-          <td>123456789123456789</td>
-          <td>女</td>
-          <td>12345678912</td>
-          <td>
-            2013-01-24<br />
-            08:00-09:00<br />
-          </td>
-          <td>
-            <a href="#" class="typo_primary">打印单据</a>
-            <span class="divider_inline">|</span>
-            <a href="#" class="typo_danger">取消</a>
-            <span class="divider_inline">|</span>
-            <a href="#" class="typo_danger">删除</a>
-          </td>
-        </tr>
-        <tr>
-          <td>1601063</td>
-          <td>路人甲</td>
-          <td>25</td>
-          <td>身份证</td>
-          <td>123456789123456789</td>
-          <td>女</td>
-          <td>12345678912</td>
-          <td>
-            2013-01-24<br />
-            08:00-09:00<br />
-          </td>
-          <td>
-            <a href="#" class="typo_primary">打印单据</a>
-            <span class="divider_inline">|</span>
-            <a href="#" class="typo_danger">取消</a>
-            <span class="divider_inline">|</span>
-            <a href="#" class="typo_danger">删除</a>
-          </td>
-        </tr>
-        <tr>
-          <td>1601063</td>
-          <td>路人甲</td>
-          <td>25</td>
-          <td>身份证</td>
-          <td>123456789123456789</td>
-          <td>女</td>
-          <td>12345678912</td>
-          <td>
-            2013-01-24<br />
-            08:00-09:00<br />
-          </td>
-          <td>
-            <a href="#" class="typo_primary">打印单据</a>
-            <span class="divider_inline">|</span>
-            <a href="#" class="typo_danger">取消</a>
-            <span class="divider_inline">|</span>
-            <a href="#" class="typo_danger">删除</a>
-          </td>
-        </tr>
-        <tr>
-          <td>1601063</td>
-          <td>路人甲</td>
-          <td>25</td>
-          <td>身份证</td>
-          <td>123456789123456789</td>
-          <td>女</td>
-          <td>12345678912</td>
-          <td>
-            2013-01-24<br />
-            08:00-09:00<br />
-          </td>
-          <td>
-            <a href="#" class="typo_primary">打印单据</a>
-            <span class="divider_inline">|</span>
-            <a href="#" class="typo_danger">取消</a>
-            <span class="divider_inline">|</span>
-            <a href="#" class="typo_danger">删除</a>
-          </td>
-        </tr>
         <tr>
           <td>1601063</td>
           <td>路人甲</td>
@@ -591,10 +471,11 @@
     </table>
   </div><!-- / .container -->
 
-  <script src="../scripts/jquery.min.js"></script>
-  <script src="../scripts/jscal2/js/jscal2.js"></script>
-  <script src="../scripts/jscal2/js/lang/cn.js"></script>
-  <script src="../scripts/jquery.calendar.js"></script>
-  <script src="../scripts/jquery.fixedHead.js"></script>
+  <script src="../scripts/lib/require.js"></script>
+  <script>
+    require(['../scripts/common'], function(common) {
+      require(['app/main/table']);
+    });
+  </script>
 </body>
 </html>

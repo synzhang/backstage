@@ -64,8 +64,8 @@ define(['jquery.validator'], function() {
       $self.attr('pattern', pattern[type]).data('type', type);
     });
   }).on('blur', function() {
-    var $self             = $(this),
-        tip               = '',
+    var $self = $(this),
+        tip = '',
         $validationTarget = $self.closest($self.data('parent'));
 
     if ($validationTarget.hasClass('empty')) {
@@ -75,4 +75,51 @@ define(['jquery.validator'], function() {
     }
     $self.next('.validation').text(tip);
   });
+
+  /* 密码强度验证
+  var identifie = 'input[type="password"][verified]';
+
+  $(identifie).each(function() {
+    var $self = $(this),
+    $validation = $('<div>', {
+      'class': 'password_strength'
+    }).insertAfter(this);
+
+    if (!$('html').hasClass('lt-ie8')) {
+      $('.password_strength').css({
+        'margin-left': function() { return $(this).prev(identifie).outerWidth(true) + 5; },
+        'margin-top': function() { return -$(this).prev(identifie).outerHeight(true); }
+      });
+    }
+  }).password_strength({
+    'container': identifie + ' + .password_strength',
+    'minLength': 8,
+    'texts': {
+      1: '密码强度太弱了！请重新输入8位以上包含数字、小写字母、大写字母的密码。',
+      2: '密码强度还不够。',
+      3: '密码强度适中。',
+      4: '密码强度很高！',
+      5: '密码强度非常高！'
+    },
+    'onCheck': function(level) {
+      var $btn = $('#changePassword').find('input[type="submit"]');
+      if (level > 1) {
+        $btn.removeAttr('disabled');
+      } else {
+        $btn.prop('disabled', true);
+      }
+    }
+  }).on('blur', function() {
+    var $passwordStrength = $(this).next('.password_strength');
+
+    if ($passwordStrength.is(':hidden') && $passwordStrength.text() !== '') {
+      $passwordStrength.show();
+    } else if ($passwordStrength.text() === '') {
+      $passwordStrength.hide();
+    }
+  }).on('keyup', function() {
+    if (this.value === '') {
+      $(this).next('.password_strength').hide();
+    }
+  });*/
 });

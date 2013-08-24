@@ -481,6 +481,7 @@ input[type="radio"] {
   padding: 0; /* 2 */
   *height: 13px; /* 3 */
   *width: 13px; /* 3 */
+  vertical-align: -2px;
 }
 
 /**
@@ -566,20 +567,17 @@ textarea {
   background: url(../images/input_bg.png) repeat-x;
 }
 
-input[type="checkbox"] {vertical-align: -2px;}
 select:focus,
 input[type="text"]:focus,
 input[type="email"]:focus,
 input[type="tel"]:focus,
 input[type="url"]:focus,
 input[type="number"]:focus,
+input[type="password"]:focus,
 textarea:focus {
   border-color: rgba(82, 168, 236, 0.8);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
   outline: 0;
-  outline: thin dotted 9;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
-  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
 }
 
 /* Tables
@@ -900,7 +898,7 @@ iframe {
   padding-top: 6px;
   text-align: right;
   vertical-align: top;
-  width: 90px;
+  width: 10%;
 }
 .lt-ie7 .table_form tbody th {
   padding-top: 9px;

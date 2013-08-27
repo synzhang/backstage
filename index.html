@@ -6,7 +6,7 @@
 <head>
   <meta charset="utf-8">
   <title>Backstage</title>
-  <link rel="stylesheet" href="styles/backstage.min.css" />
+  <link rel="stylesheet" href="styles/backstage.css" />
   <style>
     html, body {
       border: none;
@@ -21,7 +21,7 @@
     })();
   </script>
 </head>
-<body>
+<body class="index">
   <div class="header clearfix">
     <a class="logo fleft" href="https://github.com/SynZhang/backstage" target="_blank">
       <img src="images/logo.png" alt="Logo" width="136" height="80" />
@@ -64,15 +64,15 @@
           data-toggle="accordion"
           data-parent=".accordion">菜单一</h3>
         <div class="accordion-body on">
-          <a class="menu-item" href="templates/table.html" target="mainframe" hidefocus>表格</a>
-          <a class="menu-item" href="templates/form.html" target="mainframe" hidefocus>表单</a>
-          <a class="menu-item" href="templates/dialog.html" target="mainframe" hidefocus>对话框(Alpha)</a>
+          <a class="menu-item js-loading-trigger" href="templates/table.html" target="mainframe" hidefocus>表格</a>
+          <a class="menu-item js-loading-trigger" href="templates/form.html" target="mainframe" hidefocus>表单</a>
+          <a class="menu-item js-loading-trigger" href="templates/dialog.html" target="mainframe" hidefocus>对话框(Alpha)</a>
         </div>
         <h3 class="accordion-head"
           data-toggle="accordion"
           data-parent=".accordion">菜单二</h3>
         <div class="accordion-body">
-          <a class="menu-item" href="templates/accordion.html" target="mainframe" hidefocus>手风琴</a>
+          <a class="menu-item js-loading-trigger" href="templates/accordion.html" target="mainframe" hidefocus>手风琴</a>
         </div>
       </div>
     </div>
@@ -85,7 +85,7 @@
           data-toggle="accordion"
           data-parent=".accordion">菜单一</h3>
         <div class="accordion-body on">
-          <a class="menu-item" href="templates/tab.html" target="mainframe" hidefocus>选项卡</a>
+          <a class="menu-item js-loading-trigger" href="templates/tab.html" target="mainframe" hidefocus>选项卡</a>
         </div>
       </div>
     </div>
@@ -118,11 +118,12 @@
           'jquery'
         ],
         'jquery.chosen': 'chosen/chosen.jquery',
-        'jquery.validator': 'validator/validator'
+        'jquery.validator': 'validator/validator',
+        'jscal2': 'jscal2/js/jscal2'
       },
       shim: {
         'jquery.accordion': { deps: ['jquery'] },
-        'jquery.calendar': { deps: ['jquery', 'jscal2/js/jscal2', 'jscal2/js/lang/cn'] },
+        'jquery.calendar': { deps: ['jquery', 'jscal2'] },
         'jquery.chosen': { deps: ['jquery'] },
         'jquery.dialog': { deps: ['jquery', 'artDialog/artDialog'] },
         'jquery.fixedHead': { deps: ['jquery'] },

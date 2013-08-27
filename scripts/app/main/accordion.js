@@ -1,1 +1,1 @@
-define(['jquery.accordion']);
+define(['app/main/common', 'jquery.accordion']);

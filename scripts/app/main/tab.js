@@ -1,1 +1,1 @@
-define(['jquery.tab']);
+define(['app/main/common', 'jquery.tab']);

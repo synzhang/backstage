@@ -6,7 +6,7 @@
 <head>
   <meta charset="utf-8">
   <title>Backstage</title>
-  <link rel="stylesheet" href="../styles/backstage.min.css" />
+  <link rel="stylesheet" href="../styles/backstage.css" />
   <link rel="stylesheet" href="../scripts/lib/jscal2/css/jscal2.css" />
   <link rel="stylesheet" href="../scripts/lib/jscal2/css/win2k/win2k.css" />
   <script>
@@ -54,7 +54,7 @@
 
         <input class="input_text" type="text" placeholder="提示信息" />
 
-        <button class="btn" type="submit">查询</button>
+        <button class="btn js-loading-trigger" type="submit">查询</button>
       </fieldset>
     </form>
 
@@ -471,9 +471,11 @@
     </table>
   </div><!-- / .container -->
 
+  <div id="loading" style="display: none;">正在加载...</div><!-- / #loading -->
+
   <script src="../scripts/lib/require.js"></script>
   <script>
-    require(['../scripts/common'], function(common) {
+    require(['../scripts/config'], function(config) {
       require(['app/main/table']);
     });
   </script>

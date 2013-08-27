@@ -1,1 +1,1 @@
-define(['jquery.dialog']);
+define(['app/main/common', 'jquery.dialog']);

@@ -7,11 +7,12 @@ require.config({
       'jquery'
     ],
     'jquery.chosen': 'chosen/chosen.jquery',
-    'jquery.validator': 'validator/validator'
+    'jquery.validator': 'validator/validator',
+    'jscal2': 'jscal2/js/jscal2'
   },
   shim: {
     'jquery.accordion': { deps: ['jquery'] },
-    'jquery.calendar': { deps: ['jquery', 'jscal2/js/jscal2', 'jscal2/js/lang/cn'] },
+    'jquery.calendar': { deps: ['jquery', 'jscal2'] },
     'jquery.chosen': { deps: ['jquery'] },
     'jquery.dialog': { deps: ['jquery', 'artDialog/artDialog'] },
     'jquery.fixedHead': { deps: ['jquery'] },

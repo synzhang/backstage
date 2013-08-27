@@ -9,7 +9,6 @@ define(['jquery.validator'], function() {
    * @param    { string } data-validation-placement {'top', 'right', 'bottom', 'left'}
    *                      提示信息显示在待验证项周围时的方位
    */
-
   var identifie = '[required]',
       pattern = {
         'number' : '^[1-9]\\d*$',
@@ -76,8 +75,30 @@ define(['jquery.validator'], function() {
     $self.next('.validation').text(tip);
   });
 
-  /* 密码强度验证
-  var identifie = 'input[type="password"][verified]';
+  if ($('html').hasClass('lt-ie9')) {
+    $('[placeholder]').each(function() {
+      var $this       = $(this),
+          placeholder = $this.attr('placeholder');
+
+      $this
+        .val(placeholder)
+        .css("color", "#ccc")
+        .focus(function(){
+          $this.css("color", "black");
+          if ($this.val() == placeholder) {
+            $this.val("");
+          }
+        })
+        .blur(function(){
+          if ($this.val() === "") {
+            $this.val(placeholder).css("color", "#ccc");
+          }
+        });
+    });
+  }
+
+  // 密码强度验证
+  /* var identifie = 'input[type="password"][verified]';
 
   $(identifie).each(function() {
     var $self = $(this),
@@ -122,4 +143,25 @@ define(['jquery.validator'], function() {
       $(this).next('.password_strength').hide();
     }
   });*/
+
+  return {
+
+    /**
+     * 复选框批量操作
+     * @param  { Object } $trigger    jQuery对象。单数，指触发“全选”或“反选”的复选框。
+     * @param  { Object } $checkboxes jQuery对象。指待批量操作的复选框。
+     * @return { Null }
+     */
+    checkAllBox: function($trigger, $checkboxes) {
+      $trigger.on('change', function() {
+        $checkboxes.prop('checked', $trigger.prop('checked'));
+      });
+
+      $checkboxes.on('change', function() {
+        if ($(this).prop('checked') == false) {
+          $trigger.prop('checked', false);
+        }
+      });
+    }
+  }
 });

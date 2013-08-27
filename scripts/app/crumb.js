@@ -21,6 +21,7 @@ define(['jquery'], function($) {
     }
 
     return {
+
       /**
        * 元素在激活（点击）时更新导航
        * @param  { Object }  $element jQuery 对象，触发元素
@@ -34,7 +35,7 @@ define(['jquery'], function($) {
           _join(this.innerHTML, level);
         });
       }
-    }
+    };
   }
 
   return {
@@ -44,5 +45,5 @@ define(['jquery'], function($) {
       }
       return instance;
     }
-  }
+  };
 });

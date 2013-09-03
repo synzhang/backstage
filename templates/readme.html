@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<!-- saved from url=(0053)file:///C:/users/admini~1/appdata/local/temp/103.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="utf-8"><style>html { font-size: 100%; overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+
+body{
+  color:#444;
+  font-family:Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman',
+              "Hiragino Sans GB", "STXihei", "微软雅黑", serif;
+  font-size:12px;
+  line-height:1.5em;
+  background:#fefefe;
+  width: 45em;
+  margin: 10px auto;
+  padding: 1em;
+  outline: 1300px solid #FAFAFA;
+}
+
+a{ color: #0645ad; text-decoration:none;}
+a:visited{ color: #0b0080; }
+a:hover{ color: #06e; }
+a:active{ color:#faa700; }
+a:focus{ outline: thin dotted; }
+a:hover, a:active{ outline: 0; }
+
+span.backtick {
+  border:1px solid #EAEAEA;
+  border-radius:3px;
+  background:#F8F8F8;
+  padding:0 3px 0 3px;
+}
+
+::-moz-selection{background:rgba(255,255,0,0.3);color:#000}
+::selection{background:rgba(255,255,0,0.3);color:#000}
+
+a::-moz-selection{background:rgba(255,255,0,0.3);color:#0645ad}
+a::selection{background:rgba(255,255,0,0.3);color:#0645ad}
+
+p{
+margin:1em 0;
+}
+
+img{
+max-width:100%;
+}
+
+h1,h2,h3,h4,h5,h6{
+font-weight:normal;
+color:#111;
+line-height:1em;
+}
+h4,h5,h6{ font-weight: bold; }
+h1{ font-size:2.5em; }
+h2{ font-size:2em; border-bottom:1px solid silver; padding-bottom: 5px; }
+h3{ font-size:1.5em; }
+h4{ font-size:1.2em; }
+h5{ font-size:1em; }
+h6{ font-size:0.9em; }
+
+blockquote{
+color:#666666;
+margin:0;
+padding-left: 3em;
+border-left: 0.5em #EEE solid;
+}
+hr { display: block; height: 2px; border: 0; border-top: 1px solid #aaa;border-bottom: 1px solid #eee; margin: 1em 0; padding: 0; }
+
+
+pre , code, kbd, samp { 
+  color: #000; 
+  font-family: monospace; 
+  font-size: 0.88em; 
+  border-radius:3px;
+  background-color: #F8F8F8;
+  border: 1px solid #CCC; 
+}
+pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; padding: 5px 12px;}
+pre code { border: 0px !important; padding: 0;}
+code { padding: 0 3px 0 3px; }
+
+b, strong { font-weight: bold; }
+
+dfn { font-style: italic; }
+
+ins { background: #ff9; color: #000; text-decoration: none; }
+
+mark { background: #ff0; color: #000; font-style: italic; font-weight: bold; }
+
+sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+
+ul, ol { margin: 1em 0; padding: 0 0 0 2em; }
+li p:last-child { margin:0 }
+dd { margin: 0 0 0 2em; }
+
+img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+td { vertical-align: top; }
+
+@media only screen and (min-width: 480px) {
+body{font-size:14px;}
+}
+
+@media only screen and (min-width: 768px) {
+body{font-size:16px;}
+}
+
+@media print {
+  * { background: transparent !important; color: black !important; filter:none !important; -ms-filter: none !important; }
+  body{font-size:12pt; max-width:100%; outline:none;}
+  a, a:visited { text-decoration: underline; }
+  hr { height: 1px; border:0; border-bottom:1px solid black; }
+  a[href]:after { content: " (" attr(href) ")"; }
+  abbr[title]:after { content: " (" attr(title) ")"; }
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }
+  pre, blockquote { border: 1px solid #999; padding-right: 1em; page-break-inside: avoid; }
+  tr, img { page-break-inside: avoid; }
+  img { max-width: 100% !important; }
+  @page :left { margin: 15mm 20mm 15mm 10mm; }
+  @page :right { margin: 15mm 10mm 15mm 20mm; }
+  p, h2, h3 { orphans: 3; widows: 3; }
+  h2, h3 { page-break-after: avoid; }
+}
+</style><title>readme</title></head><body><h1 id="backstage">Backstage</h1>
+<h2 id="_1">简介</h2>
+<p>借用 PHPCMS 设计风格开发的管理后台模版。[<a href="https://github.com/SynZhang/backstage">GitHub</a>]</p>
+<h3 id="_2">浏览器支持</h3>
+<ul>
+<li>Chrome (Mac, Windows)</li>
+<li>Firefox (Mac, Windows)</li>
+<li>Safari (Mac, Windows)</li>
+<li>Opera (Mac, Windows)</li>
+<li>IE (IE 6+)</li>
+</ul>
+<h2 id="_3">开发规范</h2>
+<h3 id="_4">统一代码风格</h3>
+<p><strong>强烈推荐</strong>安装 <a href="http://editorconfig.org/" title="支持 AppCode、Code::Blocks、Emacs、Geany、Gedit、IntellijIDEA、jEdit、Notepad++、PHPStrom、PyCharm、RubyMine、Sublime Text、TextMate、Vim、Visual Studio、WebStorm。">EditorConfig</a> 的编辑器插件并使用当前 .editorconfig 配置编写统一风格的代码。</p>
+<h3 id="_5">目录结构</h3>
+<pre><code>    backstage/
+    ├── dist/ ----------------------------------- 构建目录
+    │   ├── images/ ----------------------------- 图片目录
+    │   ├── scripts/ ---------------------------- JavaScript 脚本目录
+    │   ├── styles/ ----------------------------- CSS 样式目录
+    │   ├── index.html -------------------------- 首页
+    ├── images/ --------------------------------- 图片目录
+    ├── node_modules/ --------------------------- Node.js 模块目录
+    │   ├── *.* --------------------------------- Node.js 模块
+    ├── scripts/ -------------------------------- JavaScript 脚本目录
+    │   ├── app/ -------------------------------- backstage JavaScript 模块目录
+    │   │   ├── main/ --------------------------- 各个 Page 主入口 JavaScript目录
+    │   │   │   ├── common.js ------------------- 主入口 JavaScript 中的通用代码
+    │   │   │   ├── *.js ------------------------ 主入口 JavaScript
+    │   │   ├── *.js ---------------------------- JavaScript 模块
+    │   ├── lib/ -------------------------------- 第三方 JavaScript 目录
+    │   │   ├── *.* ----------------------------- 第三方 JavaScript 模块
+    │   ├── config.js --------------------------- RequireJS 全局配置文件
+    ├── styles/ --------------------------------- CSS 样式目录
+    │   ├── backstage.css ----------------------- CSS 主文件
+    │   ├── *.css ------------------------------- CSS 模块
+    │   ├── shame.css --------------------------- CSS 补丁
+    └── templates/ ------------------------------ 示例模版目录
+    │   ├── *.html ------------------------------ 示例模版文件
+    ├── .editorconfig --------------------------- EditorConfig 编辑器插件配置文件
+    ├── Gruntfile.js ---------------------------- Grunt 任务配置文件
+    ├── index.html ------------------------------ 首页
+    ├── package.json ---------------------------- Node.js 包描述文件
+    └── readme.md ------------------------------- 项目简介
+</code></pre>
+
+<h3 id="_6">基本模板</h3>
+<p>请参考文件 templates/template.html 。</p>
+<h3 id="_7">注释</h3>
+<h4 id="html">HTML</h4>
+<pre><code>&lt;form&gt;
+&lt;/form&gt; &lt;!-- / form --&gt;
+
+&lt;div id="wrapper"&gt;
+&lt;/div&gt; &lt;!-- / #wrapper --&gt;
+
+&lt;div class="module"&gt;
+&lt;/div&gt; &lt;!-- / .module --&gt;
+</code></pre>
+<h4 id="css">CSS</h4>
+<p>遵守 <a href="http://warpspire.com/kss/">KSS</a>，建立 Live StyleGuide 。</p>
+<pre><code>/*
+[description] || Experimental: [description] || Deprecated: [description] YYYY-MM-DD
+
+.class               - [description]
+:pseudo-class        - [description]
+
+Styleguide 0.0.0. || No styleguide reference.
+*/
+</code></pre>
+<h4 id="javascript">JavaScript</h4>
+<p>遵守 <a href="http://usejsdoc.org/">JSDoc</a> 。</p>
+<pre><code>/**
+ * [description]
+ * @param  {[type]} param       [description]
+ * @return {[type]}             [description]
+ */
+</code></pre>
+<p>详细的标签使用建议参考 Google JavaScript Style Guide 中的 <a href="http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml#Comments">Comments</a> 章节。</p>
+<h3 id="_8">建议设计模式</h3>
+<h4 id="css_1">CSS 组件</h4>
+<pre><code>.component --------------------------------- 组件
+.component_module -------------------------- 组件子模块
+.component-modifier ------------------------ 组件派生类
+.is-state ---------------------------------- 组件状态
+.js-hook ----------------------------------- JavaScript 专属钩子
+.shame-classname --------------------------- 补丁（统一放在 styles/shame.css 中，详细注释并定期修复）
+</code></pre>
+<p>由于 IE 6 不支持部分常用选择器（如：子选择器 .foo &gt; .bar ，链式选择器 .foo.bar 等），因此采用以下命名方式填补不足：</p>
+<pre><code>.is-component_module-modifier
+</code></pre>
+<h4 id="jquery">jQuery 插件</h4>
+<p>Bootstrap 的 <a href="http://getbootstrap.com/javascript/">Data-API</a> 模式能有效分离内容、样式、行为。</p>
+<p>HTML:</p>
+<pre><code>&lt;element attribute="value" data-attribute="value"&gt;&lt;/element&gt;
+</code></pre>
+<p>JavaScript:</p>
+<pre><code>(function($) {
+
+  // Module Public Class Definition
+  // ==============================
+
+  var Module = function(element, options) {
+    this.$element = $(element);
+    this.options  = options;
+  };
+
+  Module.prototype.method = function() {
+    // do something...
+  };
+
+  // Module Default Options
+
+  Module.DEFAULTS = {
+    'key': 'value'
+  };
+
+
+  // Module jQuery Plugin Definition
+  // ===============================
+
+  var old = $.fn.module;
+
+  $.fn.module = function(option) {
+    return this.each(function() {
+      var $this   = $(this),
+          data    = $this.data('module'),
+          options = $.extend(
+            {},
+            Module.DEFAULTS,
+            $this.data(),
+            typeof option == 'object' &amp;&amp; option
+          );
+
+      if (!data) $this.data('module', (data = new Module(this, options)));
+      if (typeof option == 'string') data[option]();
+    });
+  };
+
+  $.fn.module.Constructor = Module;
+
+
+  // Module No Conflict
+  // ==================
+
+  $.fn.module.noConflict = function() {
+    $.fn.module = old;
+    return this;
+  };
+
+
+  // Module Data-API
+  // ===============
+
+  $(document).on('event.module.data-api', '[data-toggle="module"]', function(e) {
+    e.preventDefault();
+
+    $(this).module('method');
+    // do something...
+  });
+
+})(jQuery);
+</code></pre>
+<h2 id="_9">任务自动化</h2>
+<p>建立项目前请确认已安装 <a href="http://nodejs.org/">Node.js</a>、 <a href="http://gruntjs.com/">Grunt</a> 。</p>
+<p>在终端中切换至项目目录，然后根据任务运行如下命令：</p>
+<ul>
+<li>项目初始化-安装 NPM 模块： <code>npm install</code></li>
+<li>开发－启动 Web 服务器，实时监测项目目录中的文件更新并刷新浏览器：<code>grunt</code></li>
+<li>构建发布版本－校验 CSS、JavaScript，合并压缩 CSS 、JavaScript 模块：<code>grunt build</code></li>
+</ul></body></html>

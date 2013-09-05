@@ -1,0 +1,52 @@
+/* ==========================================================================
+ * @author: zeyanzhang.china@gmail.com  (Syn Zhang)
+ * ========================================================================== */
+
+/* Rule
+   ========================================================================== */
+
+/*
+分隔线组件
+  Example:
+    hr.rule
+    span.rule-inline
+    div.rule-vertical
+
+.rule                         - 水平分隔线。
+  .rule-dotted                - 点风格。
+  .rule-dashed                - 虚线风格。
+  .rule-thick                 - 加粗风格。
+
+  .rule-inline                - 行内分隔线。
+  .experimental-rule-vertical - 竖直分隔线。
+
+No styleguide reference.
+*/
+
+.rule {
+  border: none;
+  border-bottom-color: #d7d7d7;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  height: 0;
+  line-height: 0;
+  margin-bottom: 1em;
+}
+  .rule-dotted { border-bottom-style: dotted; }
+  .rule-dashed { border-bottom-style: dashed; }
+  .rule-thick  { border-bottom-width: 2px; }
+
+  .rule-inline {
+    color: #ddd;
+    font-style: normal;
+    padding: 0 2px;
+  }
+
+  .experimental-rule-vertical {
+    border: none;
+    border-left-color: #d7d7d7;
+    border-left-style: solid;
+    border-left-width: 1px;
+    margin-left: 15px;
+    padding-left: 15px;
+  }

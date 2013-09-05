@@ -1,0 +1,60 @@
+/* ==========================================================================
+ * @author: zeyanzhang.china@gmail.com  (Syn Zhang)
+ * ========================================================================== */
+
+/* Calendar
+   ========================================================================== */
+
+/*
+日历组件
+  Example:
+    table.calendar
+    th.calendar-weekday
+    td.calendar_day
+
+.calendar                 - 日历组件容器。
+  .calendar-weekday       - 工作日。
+  .calendar-day           - 日期日期单元格。
+    .calendar_day_date    - 日期单元格中的日期。
+    .calendar_day_content - 日期单元格内容。
+
+No styleguide reference.
+*/
+
+table.calendar {
+  border-collapse: collapse;
+  border-spacing: 0;
+  table-layout: fixed;
+  width: 848px;
+}
+.calendar_weekday,
+.calendar_day {
+  border: 1px solid #e6e6e6;
+}
+.calendar_weekday {
+  background-color: #eef3f7;
+  color: #56bbc9;
+  line-height: 32px;
+}
+.calendar_day {
+  height: 110px;
+  padding: 5px;
+  width: 110px;
+}
+.calendar_day_date {
+  color: #6a6a76;
+  float: right;
+  font-size: 24px;
+  line-height: 24px;
+  margin: 8px;
+}
+.calendar_day_content {
+  clear: both;
+  color: #adadb5;
+  font-size: 12px;
+  line-height: 12px;
+  padding: 10px 0 5px 0;
+}
+.calendar_day_content .name {
+  color: #5ea935;
+}

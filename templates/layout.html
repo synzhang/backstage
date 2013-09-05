@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Backstage</title>
+  <link rel="stylesheet" href="../styles/backstage.css" />
+  <style>
+    /* Demo 样式 */
+    .row {
+      margin-bottom: 10px;
+    }
+    .grid, .demo-box {
+      background-color: #edf4ed;
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+    }
+  </style>
+  <script>
+    (function() {
+      var html = document.getElementsByTagName('html')[0];
+      html.className = html.className.replace('no-js', 'js');
+    })();
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h2>浮动</h2>
+    <div class="clearfix">
+      <div class="demo-box grid-2 fleft">左浮动（.fleft）</div>
+      <div class="demo-box grid-2 fright">右浮动（.fright）</div>
+    </div>
+
+    <hr>
+
+    <h2>栅格系统</h2>
+    <div class="row">
+      <div class="grid grid-1">1</div>
+      <div class="grid grid-1">1</div>
+      <div class="grid grid-1">1</div>
+      <div class="grid grid-1">1</div>
+      <div class="grid grid-1">1</div>
+      <div class="grid grid-1">1</div>
+      <div class="grid grid-1">1</div>
+      <div class="grid grid-1">1</div>
+      <div class="grid grid-1">1</div>
+      <div class="grid grid-1">1</div>
+      <div class="grid grid-1">1</div>
+      <div class="grid grid-1">1</div>
+    </div>
+    <div class="row">
+      <div class="grid grid-2">2</div>
+      <div class="grid grid-2">2</div>
+      <div class="grid grid-2">2</div>
+      <div class="grid grid-2">2</div>
+      <div class="grid grid-2">2</div>
+      <div class="grid grid-2">2</div>
+    </div>
+    <div class="row">
+      <div class="grid grid-3">3</div>
+      <div class="grid grid-3">3</div>
+      <div class="grid grid-3">3</div>
+      <div class="grid grid-3">3</div>
+    </div>
+    <div class="row">
+      <div class="grid grid-5">5</div>
+      <div class="grid grid-2">2</div>
+      <div class="grid grid-4">4</div>
+      <div class="grid grid-1">1</div>
+    </div>
+    <div class="row">
+      <div class="grid grid-6">6</div>
+      <div class="grid grid-6">6</div>
+    </div>
+    <div class="row">
+      <div class="grid grid-12">12</div>
+    </div>
+    <div class="row">
+      <div class="grid grid-11 offset-1">11</div>
+    </div>
+    <div class="row">
+      <div class="grid grid-4 offset-8">4</div>
+    </div>
+    <div class="row">
+      <div class="grid grid-5 offset-2">5</div>
+      <div class="grid grid-3 offset-2">3</div>
+    </div>
+    <div class="row">
+      <div class="grid grid-3">3</div>
+      <div class="grid grid-1 offset-1">1</div>
+      <div class="grid grid-6 offset-1">6</div>
+    </div>
+  </div><!-- / .container -->
+</body>
+</html>

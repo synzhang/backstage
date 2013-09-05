@@ -1,0 +1,200 @@
+/* ==========================================================================
+ * @author: zeyanzhang.china@gmail.com  (Syn Zhang)
+ * ========================================================================== */
+
+/* Button
+   ========================================================================== */
+
+/*
+按钮组件
+
+.button                                - 普通按钮。
+  .button:hover                        - 普通按钮 hover 时的样式。
+  .button:active                       - 普通按钮 active 时的样式。
+  .is-button-disabled                  - 普通按钮未激活时的样式。
+  .is-button-disabled:active           - 普通按钮未激活时的样式。
+
+  .button-primary                      - 主要按钮。
+    .button-primary:hover              - 主要按钮 hover 时的样式。
+    .button-primary:active             - 主要按钮 active 时的样式。
+    .is-button-primary-disabled        - 主要按钮未激活时的样式。
+    .is-button-primary-disabled:hover  - 未激活的主要按钮 hover 时的样式。
+    .is-button-primary-disabled:active - 未激活的主要按钮 active 时的样式。
+
+  .button-danger                       - 具有一定危险操作的按钮。
+    .button-danger:hover               - 危险操作按钮 hover 时的样式。
+    .button-danger:active              - 危险操作按钮 active 时的样式。
+    .is-button-danger-disabled         - 危险操作按钮未激活时的样式。
+    .is-button-danger-disabled:hover   - 未激活的危险操作按钮 hover 时的样式。
+    .is-button-danger-disabled:active  - 未激活的危险操作按钮 active 时的样式。
+
+No styleguide reference.
+*/
+
+/**
+ * 1. 修复 IE 7 下随字符增加宽度增加的问题。
+ */
+.button {
+  background-color: #ddd;
+  border: 0;
+  border-bottom: 1px solid #666;
+  border-right: 1px solid #666;
+  cursor: pointer;
+  display: inline-block;
+  *display: inline;
+  line-height: 20px;
+  margin-left: 2px;
+  margin-right: 2px;
+  *overflow: visible; /* 1 */
+  padding: 5px 15px;
+  text-align: center;
+  *zoom: 1;
+}
+/**
+ * 修复 Firefox 中上内边距比下内边距略小的问题。
+ */
+@-moz-document url-prefix() {
+  .button {
+    padding: 5px 15px !important;
+  }
+}
+.lt-ie8 .button {
+  padding-bottom: 3px;
+}
+.lt-ie7 .button {
+  padding-bottom: 0;
+}
+a.button {
+  color: #444;
+}
+.lt-ie7 a.button {
+  padding-bottom: 4px;
+}
+a.button:hover {
+  text-decoration: none;
+}
+.button:active {
+  background-color: #666;
+  border-color: #ddd;
+  color: #fff;
+}
+a.button:active {
+  color: #fff;
+}
+  .is-button-disabled,
+  .is-button-disabled:active {
+    background-color: #eee;
+    border-color: #666;
+    color: #999C99;
+    cursor: default;
+  }
+  a.is-button-disabled,
+  a.is-button-disabled:active {
+    color: #999C99;
+  }
+
+  .button-primary {
+    -ms-filter: alpha(opacity=100 finishopacity=100 style=1 startx=0,starty=0,finishx=0,finishy=150) progid:DXImageTransform.Microsoft.gradient(startcolorstr=#599bcd,endcolorstr=#3072b3,gradientType=0);
+    background: #599bcd;
+    background: -moz-linear-gradient(top, #599bcd, #3072b3);
+    background: -webkit-gradient(linear, 0 0, 0 bottom, from(#599bcd), to(#3072b3));
+    background: -o-linear-gradient(top, #599bcd, #3072b3);
+    background: linear-gradient(to bottom, #599bcd, #3072b3);
+    border-color: #2a65a0;
+    border-radius: 3px;
+    border-width: 1px;
+    color: #fff;
+    text-shadow: rgba(0, 0, 0, 0.247059) 0 -1px 0;
+  }
+  a.button-primary {
+    color: #fff;
+  }
+  .button-primary:hover {
+    color: #fff;
+  }
+  .button-primary:active {
+    background-color: #3072b3;
+    background-image: none;
+    border-color: #25588c;
+    box-shadow: rgba(0, 0, 0, 0.14902) 0 3px 5px inset;
+  }
+  .is-button-primary-disabled,
+  .is-button-primary-disabled:hover {
+    cursor: default;
+    opacity: .5;
+  }
+  .is-button-primary-disabled:active {
+    -ms-filter: alpha(opacity=100 finishopacity=100 style=1 startx=0,starty=0,finishx=0,finishy=150) progid:DXImageTransform.Microsoft.gradient(startcolorstr=#599bcd,endcolorstr=#3072b3,gradientType=0);
+    background: #599bcd;
+    background: -moz-linear-gradient(top, #599bcd, #3072b3);
+    background: -webkit-gradient(linear, 0 0, 0 bottom, from(#599bcd), to(#3072b3));
+    background: -o-linear-gradient(top, #599bcd, #3072b3);
+    background: linear-gradient(to bottom, #599bcd, #3072b3);
+    border-color: #2a65a0;
+    box-shadow: none;
+    opacity: .5;
+  }
+
+  .button-danger {
+    -ms-filter: alpha(opacity=100 finishopacity=100 style=1 startx=0,starty=0,finishx=0,finishy=150) progid:DXImageTransform.Microsoft.gradient(startcolorstr=#fafafa,endcolorstr=#eaeaea,gradientType=0);
+    background: #fafafa;
+    background: -moz-linear-gradient(top, #fafafa, #eaeaea);
+    background: -webkit-gradient(linear, 0 0, 0 bottom, from(#fafafa), to(#eaeaea));
+    background: -o-linear-gradient(top, #fafafa, #eaeaea);
+    background: linear-gradient(to bottom, #fafafa, #eaeaea);
+    border-color: #ddd;
+    border-radius: 3px;
+    border-width: 1px;
+    color: #bd362f;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.9);
+  }
+  a.button-danger {
+    color: #bd362f;
+  }
+  .button-danger:hover {
+    -ms-filter: alpha(opacity=100 finishopacity=100 style=1 startx=0,starty=0,finishx=0,finishy=150) progid:DXImageTransform.Microsoft.gradient(startcolorstr=#dc5f59,endcolorstr=#b33630,gradientType=0);
+    background: #dc5f59;
+    background: -moz-linear-gradient(top, #dc5f59, #b33630);
+    background: -webkit-gradient(linear, 0 0, 0 bottom, from(#dc5f59), to(#b33630));
+    background: -o-linear-gradient(top, #dc5f59, #b33630);
+    background: linear-gradient(to bottom, #dc5f59, #b33630);
+    border-color: #cd504a;
+    color: #fff;
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.3);
+  }
+  .button-danger:active {
+    background: #b33630;
+    border-color: #9f312c;
+    color: #fff;
+  }
+  .is-button-danger-disabled {
+    cursor: default;
+    opacity: .5;
+  }
+  .is-button-danger-disabled:hover,
+  .is-button-danger-disabled:active {
+    -ms-filter: alpha(opacity=100 finishopacity=100 style=1 startx=0,starty=0,finishx=0,finishy=150) progid:DXImageTransform.Microsoft.gradient(startcolorstr=#fafafa,endcolorstr=#eaeaea,gradientType=0);
+    background: #fafafa;
+    background: -moz-linear-gradient(top, #fafafa, #eaeaea);
+    background: -webkit-gradient(linear, 0 0, 0 bottom, from(#fafafa), to(#eaeaea));
+    background: -o-linear-gradient(top, #fafafa, #eaeaea);
+    background: linear-gradient(to bottom, #fafafa, #eaeaea);
+    border-color: #ddd;
+    color: #bd362f;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.9);
+  }
+  a.is-button-danger-disabled:active {
+    color: #bd362f;
+  }
+  .lt-ie7 .button-primary,
+  .lt-ie7 .button-danger {
+    padding-bottom: 3px;
+  }
+  .lt-ie9 a.is-button-primary-disabled,
+  .lt-ie9 a.is-button-primary-disabled:hover,
+  .lt-ie9 a.is-button-primary-disabled:active,
+  .lt-ie9 a.is-button-danger-disabled,
+  .lt-ie9 a.is-button-danger-disabled:hover,
+  .lt-ie9 a.is-button-danger-disabled:active {
+    color: #aca899;
+  }

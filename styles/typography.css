@@ -1,0 +1,44 @@
+/* ==========================================================================
+ * @author: zeyanzhang.china@gmail.com  (Syn Zhang)
+ * ========================================================================== */
+
+/* Typography
+   ========================================================================== */
+
+/*
+字体排印
+
+.typo-left     - 文本居左。
+.typo-center   - 文本居中。
+.typo-right    - 文本居右。
+
+.typo-info     - 提示文字。
+.typo-primary  - 着重文字。
+.typo-success  - 成功文字。
+.typo-warning  - 警告文字。
+.typo-danger   - 危险文字。
+
+.typo-capital  - 大写字母。
+
+.typo-ellipsis - 单行文字溢出省略号显示。
+
+No styleguide reference.
+*/
+
+.typo-left   { text-align: left   !important; }
+.typo-center { text-align: center !important; }
+.typo-right  { text-align: right  !important; }
+
+.typo-info      { color: #888    !important; }
+.typo-primary   { color: #1e50a2 !important; }
+.typo-success   { color: #51a351 !important; }
+.typo-warning   { color: #f50    !important; }
+.typo-danger    { color: #bd362f !important; }
+
+.typo-capital { text-transform: uppercase !important; }
+
+.typo-ellipsis {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}

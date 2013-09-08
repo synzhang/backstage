@@ -40,6 +40,6 @@ require(['jquery'], function($) {
     // IE 6
 
     // 修复 IE 6 下 <select> 层叠顺序过高
-    $.fn.bgiframe && $('.fix-z-index').bgiframe();
+    $.fn.bgiframe && $('.shame-z-index').bgiframe();
   }
 });

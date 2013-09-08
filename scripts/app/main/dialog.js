@@ -1,1 +1,3 @@
-define(['app/main/common', 'jquery.dialog']);
+require(['jquery.dialog'], function() {
+  require(['app/main/common']);
+});

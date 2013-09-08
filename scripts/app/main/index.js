@@ -1,10 +1,12 @@
-define(['app/main/common', 'app/crumb', 'jquery.tab', 'jquery.accordion'],
-  function(common, breadcrumb) {
+require(['app/crumb', 'jquery.tab', 'jquery.accordion'],
+  function(breadcrumb) {
     var $html        = $('html'),
         crumb        = breadcrumb.getInstance(),
         $loading     = $('#loading'),
         offsetAside  = $('#switcher_aside_left').offset().left,
         isAsideShown = true;
+
+    require(['app/main/common']);
 
     // 导航提示 @todo
     crumb.register($('.nav_major [data-toggle="tab"]'),

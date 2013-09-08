@@ -1,3 +1,3 @@
-define(['app/main/common', 'app/form'], function(common, form) {
-  // Do something
+require(['app/form'], function(form) {
+  require(['app/main/common']);
 });

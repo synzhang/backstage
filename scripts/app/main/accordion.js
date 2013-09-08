@@ -1,1 +1,3 @@
-define(['app/main/common', 'jquery.accordion']);
+require(['jquery.accordion'], function() {
+  require(['app/main/common']);
+});

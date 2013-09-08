@@ -1,1 +1,3 @@
-define(['app/main/common', 'jquery.tab']);
+require(['jquery.tab'], function() {
+  require(['app/main/common']);
+});

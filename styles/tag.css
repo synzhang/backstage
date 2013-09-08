@@ -1,0 +1,31 @@
+/* ==========================================================================
+ * @author: zeyanzhang.china@gmail.com  (Syn Zhang)
+ * ========================================================================== */
+
+/* Tag
+   ========================================================================== */
+
+/*
+标签组件
+
+.tag         - 标签组件。
+  .is-tag-on - 标签组件激活状态。
+
+No styleguide reference.
+*/
+
+.tag {
+  border-radius: 3px;
+  color: #444;
+  display: inline-block;
+  *display: inline;
+  padding: 2px 4px;
+  text-decoration: none;
+  white-space: nowrap;
+  *zoom: 1;
+}
+  .is-tag-on {
+    background-color: #468847;
+    color: #fff;
+    font-weight: bold;
+  }

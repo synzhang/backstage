@@ -1,7 +1,7 @@
 // Chosen, a Select Box Enhancer for jQuery and Protoype
 // by Patrick Filler for Harvest, http://getharvest.com
-//
-// Version 0.9.4 (91160 Modified)
+// 
+// Version 0.9.4
 // Full source at https://github.com/harvesthq/chosen
 // Copyright (c) 2011 Harvest http://getharvest.com
 
@@ -35,7 +35,7 @@
       this.form_field_jq = $(this.form_field);
       this.is_multiple = this.form_field.multiple;
       this.is_rtl = this.form_field_jq.hasClass("chzn-rtl");
-      this.default_text_default = this.form_field.multiple ? "选择一些选项" : "选择一个选项";
+      this.default_text_default = this.form_field.multiple ? "Select Some Options" : "Select an Option";
       this.set_up_html();
       this.register_observers();
       this.form_field_jq.addClass("chzn-done");
@@ -54,7 +54,7 @@
       this.result_single_selected = null;
       this.allow_single_deselect = (this.options.allow_single_deselect != null) && this.form_field.options[0].text === "" ? this.options.allow_single_deselect : false;
       this.choices = 0;
-      return this.results_none_found = this.options.no_results_text || "没有符合的结果：";
+      return this.results_none_found = this.options.no_results_text || "No results match";
     };
     Chosen.prototype.set_up_html = function() {
       var container_div, dd_top, dd_width, sf_width;

@@ -1,0 +1,109 @@
+/* ==========================================================================
+ * @author: zeyanzhang.china@gmail.com  (Syn Zhang)
+ * ========================================================================== */
+
+/* Table
+   ========================================================================== */
+
+/*
+表格组件
+
+.table              - 表格组件基类。
+  .table caption    - 表格主标题。
+  .table .subtitle  - 表格子标题。
+  .table thead      - 表格头部。
+    .table thead th - 表格头部列首。
+  .table tbody      - 表格主体。
+    .table tbody th - 表格主体行首。
+  .table tfoot      - 表格底部。
+    .table tfoot th - 表格底部行首。
+
+  .table-fluid      - 流式宽度表格。
+  .table-bordered   - 带边框表格。
+  .table-striped    - 条纹表格。
+  .table-form       - 表单表格。
+
+No styleguide reference.
+*/
+
+.table {
+  margin-bottom: 10px;
+}
+
+  .table caption {
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .table .subtitle {
+    font-weight: bold;
+    text-align: left;
+  }
+
+  .table thead, .table tfoot {
+    background-color: #eef3f7;
+  }
+    .table thead th,
+    .table tfoot th {
+      font-weight: normal;
+      height: 30px;
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+    .table thead th { border-bottom: 1px solid #d5dfe8; }
+    .table tfoot th { border-top: 1px solid #d5dfe8; }
+    .table tfoot td {
+      height: 30px;
+    }
+
+    .table tbody tr:hover,
+    .is-tr-hover {
+      background-color: #eef3f7;
+    }
+      .table tbody th {
+        border-bottom: 1px solid #eee;
+        font-weight: normal;
+        height: 30px;
+        padding-right: .5em;
+        text-align: right;
+      }
+      .table tbody td {
+        border-bottom: 1px solid #eee;
+        padding: 5px;
+        word-break: break-all;
+      }
+
+  .table-fluid {
+    width: 100%;
+  }
+
+    .table-bordered thead,
+    .table-bordered thead th,
+    .table-bordered tfoot,
+    .table-bordered tfoot th,
+    .table-bordered tfoot td,
+    .table-bordered tbody td {
+      border: 1px solid #d5dfe8;
+    }
+
+    .table-striped tbody tr:nth-of-type(even) {
+      background-color: #fbfcfd;
+    }
+
+    .table-form tbody th {
+      border-bottom: 1px solid #eee;
+      height: auto;
+      padding-bottom: 6px;
+      padding-top: 6px;
+      text-align: right;
+      vertical-align: top;
+      width: 10%;
+    }
+    .table-form tbody tr:hover {
+      background-color: transparent;
+    }
+      .lt-ie7 .table-form tbody th {
+        padding-top: 9px;
+      }

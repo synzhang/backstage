@@ -39,6 +39,10 @@ require(['jquery'], function($) {
   if ($html.hasClass('lt-ie7')) {
     // IE 6
 
+    $('.table tbody tr').not('.table-form').hover(function() {
+      $(this).toggleClass('is-tr-hover');
+    });
+
     // 修复 IE 6 下 <select> 层叠顺序过高
     $.fn.bgiframe && $('.shame-z-index').bgiframe();
   }

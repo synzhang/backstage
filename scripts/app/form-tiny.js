@@ -1,5 +1,14 @@
 define(['jquery'], function($) {
-  var identifie = '[required]';
+  var identifie = '[required]',
+      pattern = {
+            'number': '^[1-9]\\d*$',
+            'tel': '1\\d{10}',
+            'mobilephone': '^0?(13[0-9]|15[012356789]|18[0236789]|14[57])[0-9]{8}$',
+            'idcard': '\\d{15}|\\d{18}',
+            'qq': '[1-9][0-9]{4,}',
+            'ip': '\\d+\\.\\d+\\.\\d+\\.\\d+',
+            'zipcode': '[1-9]\\d{5}(?!\\d)'
+          };
 
   $('form')
     .filter(function() {
@@ -10,15 +19,19 @@ define(['jquery'], function($) {
       var result = true;
 
       $(identifie, this).each(function() {
-        if ($(this).val() === '') {
-          var tip = $(this).data('validationEmpty');
+        var $this = $(this),
+            type = $this.data('type'),
+            isEmpty = $.trim($this.val()) === '',
+            isError = !new RegExp(pattern[type]).test($this.val());
+
+        if (isEmpty || isError) {
+          var tip = '';
+
+          if (isEmpty) tip = $this.data('validationEmpty');
+          else if (isError) tip = $this.data('validationError');
 
           e.preventDefault();
-          if (typeof art != 'undefined') {
-            art.dialog.tips(tip, 2);
-          } else {
-            alert(tip); // 兼容下先
-          }
+          art.dialog.tips(tip, 2);
 
           result = false;
           return false;

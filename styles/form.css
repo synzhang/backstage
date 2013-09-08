@@ -1,0 +1,136 @@
+/* ==========================================================================
+ * @author: zeyanzhang.china@gmail.com  (Syn Zhang)
+ * ========================================================================== */
+
+/* Form
+   ========================================================================== */
+
+/*
+表单组件
+
+ .text-input              - 文本输入。
+  input.is-disabled       - 未激活状态的文本输入。
+  input.is-disabled:focus - 未激活状态的文本输入 focus 时的样式。
+
+slect.is-disabled         - 未激活状态的下拉菜单。
+
+.validation               - 验证失败后时工具条提示。
+  .validation-top         - 验证项上方的工具条提示。
+  .validation-right       - 验证项右方的工具条提示。
+  .validation-bottom      - 验证项下方的工具条提示。
+  .validation-left        - 验证项左方的工具条提示。
+
+.empty .validation        - 验证项验证结果为空时的工具条提示。
+.empty .form-key          - 验证项验证结果为空时的表单字段名称。
+.empty .text-input        - 验证项验证结果为空时的文本输入。
+.empty select             - 验证项验证结果为空时的下拉菜单。
+.empty textarea           - 验证项验证结果为空时的文本区域。
+.error .validation        - 验证项验证结果错误时的工具条提示。
+.error .form-key          - 验证项验证结果错误时的表单字段名称。
+.error .text-input        - 验证项验证结果错误时的文本输入。
+.error select             - 验证项验证结果错误时的下拉菜单。
+.error textarea           - 验证项验证结果错误时的文本区域。
+
+No styleguide reference.
+*/
+
+.text-input {
+  box-shadow: inset 0 1px 1px #e9e9e9;
+  border: 1px solid #D0D0D0;
+  height: 18px;
+  line-height: 18px;
+  padding: 2px 0 2px 5px;
+}
+.lt-ie9 .text-input {
+  background-image: url(../image/input_bg.png);
+  background-repeat: repeat-x;
+}
+.lt-ie9 .text-input.is-disabled {
+  background-image: none;
+}
+  input.is-disabled {
+    background-color: transparent;
+    _background-color: #fff;
+    border: 0;
+    box-shadow: none;
+    color: #4B8BCE;
+    height: 20px;
+    line-height: 20px;
+    padding: 2px 0 2px 5px;
+  }
+  input.is-disabled:focus {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+  }
+
+select.is-disabled,
+  select.is-disabled option {
+    -webkit-appearance:none;
+    background-color: transparent;
+    _background-color: #fff;
+    border: 0;
+    color: #4B8BCE;
+  }
+
+.validation {
+  background-color: #f27fa7;
+  border-radius: 2px;
+  box-shadow: 1px 1px #aaa;
+  color: #fff;
+  display: none;
+  font-size: 12px;
+  line-height: 20px;
+  padding: 4px 15px;
+  position: absolute;
+}
+.validation:before {
+  content: '';
+  border-style: solid;
+  border-width: 6px;
+  height: 0;
+  position: absolute;
+  width: 0;
+}
+  .validation-top:before {
+    border-color: #f27fa7 transparent transparent transparent;
+    left: 5px;
+    top: 28px;
+  }
+  .validation-right:before {
+    border-color: transparent #f27fa7 transparent transparent;
+    left: -12px;
+    top: 8px;
+  }
+  .validation-bottom:before {
+    border-color: transparent transparent #f27fa7 transparent;
+    left: 5px;
+    top: -12px;
+  }
+  .validation-left:before {
+    border-color: transparent transparent transparent #f27fa7;
+    right: -12px;
+    top: 8px;
+  }
+
+.empty .validation,
+.unvalid .validation,
+.error .validation {
+  display: block;
+}
+.empty .form-key,
+.unvalid .form-key,
+.error .form-key {
+  color: #bd362f;
+}
+.empty .text-input,
+.empty select,
+.empty textarea,
+.unvalid .text-input,
+.unvalid select,
+.unvalid textarea,
+.error .text-input,
+.error select,
+.error textarea {
+  border-color: #bd362f;
+}

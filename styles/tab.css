@@ -1,0 +1,94 @@
+/* ==========================================================================
+ * @author: zeyanzhang.china@gmail.com  (Syn Zhang)
+ * ========================================================================== */
+
+/* Tab
+   ========================================================================== */
+
+/*
+选项卡组件
+
+.tab_title         - 选项卡头部。
+  .is-tab_title-on - 选项卡头部激活状态。
+.tab_pane          - 选项卡主体。
+
+  .tab-nav         - 导航选项卡。
+  .tab-pill        - 片状选项卡。
+  .tab-vertical    - 竖直选项卡。
+
+No styleguide reference.
+*/
+
+.tab_title {
+  cursor: pointer;
+  display: inline-block;
+  *display: inline;
+  font-weight: normal;
+  margin: 0;
+  *zoom: 1;
+}
+.tab_title:hover {
+  text-decoration: none;
+}
+.tab_title:active {
+  outline: 0;
+}
+
+  .tab_title a {
+    display: block;
+    text-decoration: none;
+  }
+  .tab_title a:hover {
+    text-decoration: none;
+  }
+
+.tab_pane {
+  display: none;
+}
+.no-js .tab_pane {
+  display: block;
+}
+
+  .tab-nav .tab_title,
+  .tab-nav .tab_title a {
+    background: url(../images/btn_bg.gif) no-repeat;
+    height: 34px;
+    line-height: 34px;
+  }
+  .tab-nav .tab_title {
+    padding-left: 12px;
+  }
+  .tab-nav .tab_title a {
+    background-position: right top;
+    font-size: 14px;
+    font-weight: 700;
+    padding-right: 12px;
+  }
+    .tab-nav .is-tab_title-on {
+      background-position: left -43px;
+    }
+    .tab-nav .is-tab_title-on a {
+      background-position: right -43px;
+      color: #3A6EA5;
+    }
+
+  .tab-pill .tab_title,
+  .tab-pill .tab_title a {
+    color: #4b8bce;
+    height: 24px;
+    line-height: 24px;
+  }
+  .tab-pill .tab_title {
+    padding: 0 8px;
+  }
+  .tab-pill .tab_title a {
+    padding: 0;
+  }
+    .tab-pill .is-tab_title-on {
+      background-color: #4b8bce;
+      border-radius: 3px;
+      color: #fff;
+    }
+    .tab-pill .is-tab_title-on a {
+      color: #fff;
+    }

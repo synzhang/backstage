@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Backstage</title>
+  <link rel="stylesheet" href="../styles/backstage.css" />
+  <script>
+    (function() {
+      var html = document.getElementsByTagName('html')[0];
+      html.className = html.className.replace('no-js', 'js');
+    })();
+  </script>
+</head>
+<body>
+  <div class="container">
+  </div><!-- / .container -->
+
+  <div class="loading" style="display: none;">正在加载...</div><!-- / #loading -->
+  <script src="../scripts/lib/require.js"></script>
+  <script>
+    require(['../scripts/config'], function(config) {
+      require(['app/main/{main}']);
+    });
+  </script>
+</body>
+</html>

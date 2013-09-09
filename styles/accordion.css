@@ -49,7 +49,11 @@ No styleguide reference.
     border: 0;
   }
     .accordion-menu .accordion_head {
-      background: url(../images/icon_sprite.gif) no-repeat 105px -74px;
+      background-color: transparent;
+      _background-color: #fff;
+      background-image: url(../images/icon.gif);
+      background-position: 103px 8px;
+      background-repeat: no-repeat;
       border: 0;
       border-bottom: 1px solid #D9E4EA;
       color: #275D96;
@@ -61,7 +65,7 @@ No styleguide reference.
       padding: 0;
     }
       .accordion-menu .is-accordion_head-on {
-        background-position: 100px -98px;
+        background-position: 100px -16px;
       }
 
       .accordion-menu .accordion_head a {

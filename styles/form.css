@@ -42,7 +42,7 @@ No styleguide reference.
   padding: 2px 0 2px 5px;
 }
 .lt-ie9 .text-input {
-  background-image: url(../image/input_bg.png);
+  background-image: url(../images/input-background.png);
   background-repeat: repeat-x;
 }
 .lt-ie9 .text-input.is-disabled {

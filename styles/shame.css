@@ -29,3 +29,11 @@
 .header .tab-nav {
   margin-top: 46px;
 }
+
+/* 修复 IE 8 下 Chosen 插件向上偏移 */
+.lt-ie9 .chzn-container {
+  vertical-align: middle;
+}
+
+/* IE 6 下侧边栏上方多出一些间距，暂找不出原因 */
+.lt-ie7 .aside {margin-top: 0;}

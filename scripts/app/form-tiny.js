@@ -31,7 +31,11 @@ define(['jquery'], function($) {
           else if (isError) tip = $this.data('validationError');
 
           e.preventDefault();
-          art.dialog.tips(tip, 2);
+          if (typeof art != 'undefined') {
+            art.dialog.tips(tip, 2);
+          } else {
+            alert(tip);
+          }
 
           result = false;
           return false;

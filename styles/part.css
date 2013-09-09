@@ -76,14 +76,16 @@ No styleguide reference.
     padding-left: 8px;
   }
   .menu_item:hover {
-    background: url(../images/icon_sprite.gif) no-repeat left -38px;
+    background: url(../images/background.gif) no-repeat left -123px;
     text-decoration: none;
   }
   .menu_item:focus {
     outline: 0;
   }
     .is-menu_item-on {
-      background: url(../images/icon_sprite.gif) no-repeat left top;
+      background-image: url(../images/background.gif);
+      background-position: left -90px;
+      background-repeat: no-repeat;
       color: #004499;
       font-weight: bold;
       height: 29px;
@@ -91,12 +93,12 @@ No styleguide reference.
       padding-left: 20px;
     }
     .is-menu_item-on:hover {
-      background-position: left top;
+      background-position: left -90px;
     }
 
   .aside_switch {
     background-color: #E2E9EA;
-    background-image: url(../images/switcher.png);
+    background-image: url(../images/icon.gif);
     background-repeat: no-repeat;
     border-left: 1px solid #C2D0D9;
     bottom: 0;
@@ -107,22 +109,26 @@ No styleguide reference.
     width: 10px;
   }
   .aside_switch:hover  { background-color: #D6E1E4; }
-  .is-aside_switch-on  { background-position: 2px center; }
-  .is-aside_switch-off { background-position: -28px center; }
+  .is-aside_switch-on  { background-position: -104px center; }
+  .is-aside_switch-off { background-position: -119px center; }
 
 /**
  * Breadcrumb
  */
 .crumb {
   background-color: #E2E9EA;
-  height: 28px;
-  left: 145px;
-  line-height: 28px;
-  right: 0;
-  top: 80px;
   color: #444;
   font-size: 12px;
+  height: 14px;
+  line-height: 14px;
+  left: 145px;
+  padding: 7px 5px;
+  right: 0;
+  top: 80px;
 }
+  .crumb .icon-home {
+    margin-top: 0;
+  }
 
 /**
  * Main

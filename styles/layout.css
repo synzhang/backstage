@@ -5,84 +5,108 @@
 /* Layout
    ========================================================================== */
 
+/*
+排版布局模块
+Example:
+  <div class="clearfix">
+    <div class="fleft"><code>.fleft</code></div>
+    <div class="fright"><code>.fright</code></div>
+  </div>
+
+.container - 外包装容器。
+
+  .row - 栅格系统中的行。
+
+    .grid - 栅格系统中的单元格基类。
+    .grid-{Num} - 栅格系统中的单元格宽度。
+
+  .offset-{Num} - 偏移。
+
+  .fleft - 左浮动。
+  .fright - 右浮动。
+  .clearfix - 清除浮动。
+
+No styleguide reference.
+*/
+
 .container {
   margin: 10px;
 }
 
-.row {
-  margin-left: -20px;
-  *zoom: 1;
-}
-.row:before,
-.row:after {
-  display: table;
-  line-height: 0;
-  content: "";
-}
-.row:after {
-  clear: both;
-}
+  .row {
+    margin-left: -20px;
+    *zoom: 1;
+  }
+  .row:before,
+  .row:after {
+    display: table;
+    line-height: 0;
+    content: "";
+  }
+  .row:after {
+    clear: both;
+  }
 
-.grid {
-  display: inline;
-  float: left;
-  margin-left: 20px;
-}
-.grid-1 {width: 60px;}
-.grid-2 {width: 140px;}
-.grid-3 {width: 220px;}
-.grid-4 {width: 300px;}
-.grid-5 {width: 380px;}
-.grid-6 {width: 460px;}
-.grid-7 {width: 540px;}
-.grid-8 {width: 620px;}
-.grid-9 {width: 700px;}
-.grid-10 {width: 780px;}
-.grid-11 {width: 860px;}
-.grid-12 {width: 940px;}
+    .grid {
+      display: inline;
+      float: left;
+      margin-left: 20px;
+    }
+      .grid-1 {width: 60px;}
+      .grid-2 {width: 140px;}
+      .grid-3 {width: 220px;}
+      .grid-4 {width: 300px;}
+      .grid-5 {width: 380px;}
+      .grid-6 {width: 460px;}
+      .grid-7 {width: 540px;}
+      .grid-8 {width: 620px;}
+      .grid-9 {width: 700px;}
+      .grid-10 {width: 780px;}
+      .grid-11 {width: 860px;}
+      .grid-12 {width: 940px;}
 
-.offset-1 {margin-left: 100px;}
-.offset-2 {margin-left: 180px;}
-.offset-3 {margin-left: 260px;}
-.offset-4 {margin-left: 340px;}
-.offset-5 {margin-left: 420px;}
-.offset-6 {margin-left: 500px;}
-.offset-7 {margin-left: 580px;}
-.offset-8 {margin-left: 660px;}
-.offset-9 {margin-left: 740px;}
-.offset-10 {margin-left: 820px;}
-.offset-11 {margin-left: 900px;}
-.offset-12 {margin-left: 980px;}
+    .offset-1 {margin-left: 100px;}
+    .offset-2 {margin-left: 180px;}
+    .offset-3 {margin-left: 260px;}
+    .offset-4 {margin-left: 340px;}
+    .offset-5 {margin-left: 420px;}
+    .offset-6 {margin-left: 500px;}
+    .offset-7 {margin-left: 580px;}
+    .offset-8 {margin-left: 660px;}
+    .offset-9 {margin-left: 740px;}
+    .offset-10 {margin-left: 820px;}
+    .offset-11 {margin-left: 900px;}
+    .offset-12 {margin-left: 980px;}
 
-.fleft {float: left;}
-.fright {float: right;}
+  .fleft {float: left;}
+  .fright {float: right;}
 
-/**
- * Clearfix: contain floats
- *
- * For modern browsers
- * 1. The space content is one way to avoid an Opera bug when the
- *    `contenteditable` attribute is included anywhere else in the document.
- *    Otherwise it causes space to appear at the top and bottom of elements
- *    that receive the `clearfix` class.
- * 2. The use of `table` rather than `block` is only necessary if using
- *    `:before` to contain the top-margins of child elements.
- */
+  /**
+   * Clearfix: contain floats
+   *
+   * For modern browsers
+   * 1. The space content is one way to avoid an Opera bug when the
+   *    `contenteditable` attribute is included anywhere else in the document.
+   *    Otherwise it causes space to appear at the top and bottom of elements
+   *    that receive the `clearfix` class.
+   * 2. The use of `table` rather than `block` is only necessary if using
+   *    `:before` to contain the top-margins of child elements.
+   */
 
-.clearfix:before,
-.clearfix:after {
-  content: " "; /* 1 */
-  display: table; /* 2 */
-}
-.clearfix:after {
-  clear: both;
-}
+  .clearfix:before,
+  .clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+  }
+  .clearfix:after {
+    clear: both;
+  }
 
-/**
- * For IE 6/7 only
- * Include this rule to trigger hasLayout and contain floats.
- */
+  /**
+   * For IE 6/7 only
+   * Include this rule to trigger hasLayout and contain floats.
+   */
 
-.clearfix {
-  *zoom: 1;
-}
+  .clearfix {
+    *zoom: 1;
+  }

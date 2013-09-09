@@ -31,9 +31,11 @@ require(['jquery'], function($) {
   });
 
   // artDialog 对话框全局配置
-  (function (config) {
-      config['padding'] = '10px';
-  })(art.dialog.defaults);
+  if (typeof art != 'undefined') {
+    var config = art.dialog.defaults;
+
+    config['padding'] = '10px';
+  }
 
   $.fn.chosen && $('.chosen-select').chosen();
 
@@ -44,7 +46,7 @@ require(['jquery'], function($) {
   if ($html.hasClass('lt-ie7')) {
     // IE 6
 
-    $('.table tbody tr').not('.table-form').hover(function() {
+    $('.table').not('.table-form').find('tbody tr').hover(function() {
       $(this).toggleClass('is-tr-hover');
     });
 

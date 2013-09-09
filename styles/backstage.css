@@ -10,17 +10,17 @@
 
 /* Component */
 @import "typography.css";
+@import "icon.css";
+@import "rule.css";
 @import "button.css";
 @import "tab.css";
-@import "accordion.css";
-@import "switcher.css";
-@import "navigation.css";
-@import "panel.css";
-@import "form.css";
-@import "table.css";
 @import "tag.css";
-@import "rule.css";
-@import "icon.css";
+@import "pagination.css";
+@import "accordion.css";
+@import "panel.css";
+@import "table.css";
+@import "form.css";
+@import "calendar.css";
 @import "helper.css";
 @import "part.css";
 

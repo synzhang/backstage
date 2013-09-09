@@ -8,7 +8,7 @@ require(['app/crumb', 'jquery.tab', 'jquery.accordion'],
 
     require(['app/main/common']);
 
-    // 导航提示 @Todo
+    // 导航提示 @todo
     crumb.register($('.tab-nav [data-toggle="tab"]'),
                     $(), 1);
     crumb.register($('.aside [data-toggle="accordion"]'),

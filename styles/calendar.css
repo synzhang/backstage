@@ -33,7 +33,7 @@ table.calendar {
 }
 .calendar_weekday {
   background-color: #eef3f7;
-  color: #56bbc9;
+  color: #5b8bb2;
   line-height: 32px;
 }
 .calendar_day {
@@ -56,5 +56,5 @@ table.calendar {
   padding: 10px 0 5px 0;
 }
 .calendar_day_content .name {
-  color: #5ea935;
+  color: #51a351;
 }

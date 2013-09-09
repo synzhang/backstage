@@ -21,7 +21,7 @@
 No styleguide reference.
 */
 .panel {
-  border: 1px solid #FFF;
+  border: 1px solid #fff;
   margin-bottom: 10px;
   padding: 8px 10px 0 10px;
 }
@@ -37,7 +37,7 @@ No styleguide reference.
     padding: 0;
   }
     .panel-info .panel_head {
-      background-color: #EEF3F7;
+      background-color: #eef3f7;
       border-bottom: 1px solid #c7d8ea;
       color: #3a6ea5;
       font-size: 1em;
@@ -51,8 +51,8 @@ No styleguide reference.
     }
 
   .panel-ctrl {
-    background-color: #EDF4ED;
-    border-color: #C8DAA3;
+    background-color: #edf4ed;
+    border-color: #c8daa3;
   }
     .panel-ctrl fieldset,
     .panel-ctrl .fieldset {

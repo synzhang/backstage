@@ -95,11 +95,11 @@ No styleguide reference.
     .table-form tbody th {
       border-bottom: 1px solid #eee;
       height: auto;
-      padding-bottom: 6px;
-      padding-top: 6px;
+      padding-bottom: 8px;
+      padding-top: 8px;
       text-align: right;
       vertical-align: top;
-      width: 10%;
+      width: 100px;
     }
     .table-form tbody tr:hover {
       background-color: transparent;

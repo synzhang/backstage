@@ -30,13 +30,18 @@ No styleguide reference.
 .tab_title:hover {
   text-decoration: none;
 }
-.tab_title:active {
+.tab_title:focus {
   outline: 0;
 }
 
   .tab_title a {
     display: block;
     text-decoration: none;
+  }
+  .lt-ie7 .tab_title a {
+    display: inline;
+    vertical-align: top;
+    zoom: 1;
   }
   .tab_title a:hover {
     text-decoration: none;
@@ -51,7 +56,7 @@ No styleguide reference.
 
   .tab-nav .tab_title,
   .tab-nav .tab_title a {
-    background: url(../images/btn_bg.gif) no-repeat;
+    background: url(../images/background.gif) no-repeat;
     height: 34px;
     line-height: 34px;
   }

@@ -1,0 +1,73 @@
+/* ==========================================================================
+ * @author: zeyanzhang.china@gmail.com  (Syn Zhang)
+ * ========================================================================== */
+
+/* Accordion
+   ========================================================================== */
+
+/*
+折叠组件
+
+.accordion                - 折叠组件。
+  .accordion_head         - 折叠组件头部。
+    .is-accordion_head-on - 折叠组件头部激活状态。
+  .accordion_body         - 折叠组件主体。
+
+  .accordion-menu         - 折叠菜单。
+
+No styleguide reference.
+*/
+
+.accordion {
+  border: 1px solid #c7d8ea;
+  border-top: 0;
+}
+  .accordion_head {
+    background-color: #eef3f7;
+    border-top: 1px solid #c7d8ea;
+    cursor: pointer;
+    height: 30px;
+    line-height: 30px;
+    margin: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+    .is-accordion_head-on {
+      background-color: #fff;
+      border-top: 4px solid #4b8bce;
+    }
+  .accordion_body {
+    background-color: #fff;
+    display: none;
+    padding: 10px;
+  }
+  .no-js .accordion_body {
+    display: block;
+  }
+
+  .accordion-menu {
+    border: 0;
+  }
+    .accordion-menu .accordion_head {
+      background: url(../images/icon_sprite.gif) no-repeat 105px -74px;
+      border: 0;
+      border-bottom: 1px solid #D9E4EA;
+      color: #275D96;
+      font-size: 14px;
+      font-weight: bold;
+      height: 24px;
+      line-height: 24px;
+      margin: 0 0 5px 0;
+      padding: 0;
+    }
+      .accordion-menu .is-accordion_head-on {
+        background-position: 100px -98px;
+      }
+
+      .accordion-menu .accordion_head a {
+        color: #275D96;
+        text-decoration: none;
+      }
+    .accordion-menu .accordion_body {
+      padding: 0;
+    }

@@ -1,7 +1,7 @@
 require(['jquery'], function($) {
   var $html    = $('html'),
       $window  = $(window),
-      $loading = $('#loading');
+      $loading = $('.loading');
 
   /**
    * UI 常用模块初始化

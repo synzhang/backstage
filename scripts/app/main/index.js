@@ -2,47 +2,49 @@ require(['app/crumb', 'jquery.tab', 'jquery.accordion'],
   function(breadcrumb) {
     var $html        = $('html'),
         crumb        = breadcrumb.getInstance(),
-        $loading     = $('#loading'),
-        offsetAside  = $('#switcher_aside_left').offset().left,
+        $loading     = $('.loading'),
+        offsetAside  = $('.aside_switch').offset().left,
         isAsideShown = true;
 
     require(['app/main/common']);
 
-    // 导航提示 @todo
-    crumb.register($('.nav_major [data-toggle="tab"]'),
+    // 导航提示 @Todo
+    crumb.register($('.tab-nav [data-toggle="tab"]'),
                     $(), 1);
     crumb.register($('.aside [data-toggle="accordion"]'),
-                    $('.nav_major .is-tab-title_on > a'), 2);
-    crumb.register($('#aside_left .menu-item'),
-                    $('#aside_left .is-accordion-head_on'), 3);
-    $('.aside .is-accordion-head_on').trigger('click.crumb');
+                    $('.tab-nav .is-tab_title-on > a'), 2);
+    crumb.register($('.aside .menu_item'),
+                    $('.aside .is-accordion_head-on'), 3);
+    $('.aside .is-accordion_head-on').trigger('click.crumb');
 
     // 切换菜单激活样式
-    $('#aside_left').find('.menu-item').on('click', function() {
-      $('.menu-item').removeClass('is-menu-item_on');
-      $(this).addClass('is-menu-item_on');
+    $('.aside').find('.menu_item').on('click', function() {
+      $('.menu_item').removeClass('is-menu_item-on');
+      $(this).addClass('is-menu_item-on');
     });
 
     // 侧边栏切换显示／隐藏
-    $('#switcher_aside_left').on('click', function() {
+    $('.aside_switch').on('click', function() {
       isAsideShown = !isAsideShown;
       var offset = isAsideShown ? (0 - offsetAside) : offsetAside;
 
-      $('#aside_left')[isAsideShown ? 'show' : 'hide']();
+      $('.aside')[isAsideShown ? 'show' : 'hide']();
 
-      $('#switcher_aside_left').css('left', function() {
+      $('.aside_switch').css('left', function() {
         return $(this).offset().left - offset;
       });
 
       if (isAsideShown) {
-        $('#switcher_aside_left').removeClass('is-switcher_vertical_off')
-          .addClass('is-switcher_vertical_on');
+        $('.aside_switch')
+          .removeClass('is-aside_switch-off')
+          .addClass('is-aside_switch-on');
       } else {
-        $('#switcher_aside_left').removeClass('is-switcher_vertical_on')
-          .addClass('is-switcher_vertical_off');
+        $('.aside_switch')
+          .removeClass('is-aside_switch-on')
+          .addClass('is-aside_switch-off');
       }
 
-      $('#maincontainer').css('left', function() {
+      $('.maincontainer').css('left', function() {
         return $(this).offset().left - offset;
       });
 
@@ -75,7 +77,7 @@ require(['app/crumb', 'jquery.tab', 'jquery.accordion'],
             attribute: 'height'
           },
           {
-            selector: '.switcher_aside',
+            selector: '.aside_switch',
             attribute: 'height'
           }
         ];

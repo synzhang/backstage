@@ -1,0 +1,180 @@
+/* ==========================================================================
+ * @author: zeyanzhang.china@gmail.com  (Syn Zhang)
+ * ========================================================================== */
+
+/* Part
+   ========================================================================== */
+
+/*
+UI 主体结构部件
+
+.header - 头部。
+.crumb - 导航栏。
+.aside - 侧边栏。
+  .aside_switch - 侧边栏显示/隐藏开关。
+.maincontainer - 主体内容。
+.loading - “正在加载...”提示。
+
+No styleguide reference.
+*/
+
+.header, .crumb, .aside, .aside_switch, .maincontainer {
+  position: absolute;
+}
+
+/**
+ * Header
+ */
+.header {
+  background-color: #3A6EA5;
+  color: #FFF;
+  height: 80px;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
+  .header a {
+    color: #FFF;
+  }
+
+  .logo {
+    display: block;
+    height: 80px;
+    margin-right: 10px;
+    overflow: hidden;
+    width: 136px;
+  }
+
+  .sitename {
+    font-size: 20px;
+    font-weight: normal;
+    height: 46px;
+    line-height: 46px;
+    margin: 0;
+  }
+
+  .userinfo {
+    margin: 30px 30px 0 0;
+  }
+
+/**
+ * Sidebar
+ */
+.aside {
+  bottom: 0;
+  overflow: hidden;
+  margin: 10px 0 0 10px;
+  top: 80px;
+  width: 124px;
+}
+
+  .menu_item {
+    color: #666;
+    display: block;
+    line-height: 24px;
+    padding-left: 8px;
+  }
+  .menu_item:hover {
+    background: url(../images/icon_sprite.gif) no-repeat left -38px;
+    text-decoration: none;
+  }
+  .menu_item:focus {
+    outline: 0;
+  }
+    .is-menu_item-on {
+      background: url(../images/icon_sprite.gif) no-repeat left top;
+      color: #004499;
+      font-weight: bold;
+      height: 29px;
+      line-height: 29px;
+      padding-left: 20px;
+    }
+    .is-menu_item-on:hover {
+      background-position: left top;
+    }
+
+  .aside_switch {
+    background-color: #E2E9EA;
+    background-image: url(../images/switcher.png);
+    background-repeat: no-repeat;
+    border-left: 1px solid #C2D0D9;
+    bottom: 0;
+    cursor: pointer;
+    display: block;
+    left: 134px;
+    top: 80px;
+    width: 10px;
+  }
+  .aside_switch:hover  { background-color: #D6E1E4; }
+  .is-aside_switch-on  { background-position: 2px center; }
+  .is-aside_switch-off { background-position: -28px center; }
+
+/**
+ * Breadcrumb
+ */
+.crumb {
+  background-color: #E2E9EA;
+  height: 28px;
+  left: 145px;
+  line-height: 28px;
+  right: 0;
+  top: 80px;
+  color: #444;
+  font-size: 12px;
+}
+
+/**
+ * Main
+ */
+.maincontainer {
+  bottom: 0;
+  left: 145px;
+  right: 0;
+  top: 108px;
+}
+
+.main {
+  height: 100%;
+  width: 100%;
+}
+
+/**
+ * Overlay
+ */
+.overlay {
+  background-color: #000;
+  left: 0;
+  opacity: .4;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 2000;
+}
+
+/**
+ * Loading
+ */
+.loading {
+  background-color: #fff1a8;
+  border-radius: 3px;
+  box-shadow: 0 1px 5px #aaa;
+  font-weight: bold;
+  height: 16px;
+  line-height: 16px;
+  left: 50%;
+  margin-left: -193px;
+  margin-top: -70px;
+  top: 50%;
+  _top: expression(document.documentElement.scrollTop + Math.round(document.documentElement.offsetHeight / 2) + "px");
+  padding: 8px 0;
+  position: fixed;
+  _position: absolute;
+  text-align: center;
+  width: 240px;
+  z-index: 2001;
+}
+.index .loading {
+  margin-left: -120px;
+  margin-top: -8px;
+}

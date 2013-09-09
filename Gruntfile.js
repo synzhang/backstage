@@ -5,7 +5,17 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
 
     clean: {
-      build: ['dist']
+      build: ['dist/']
+    },
+
+    copy: {
+      build: {
+        files: [
+          { src: 'images/**', dest: 'dist/' },
+          { src: 'templates/**', dest: 'dist/' },
+          { src: 'index.html', dest: 'dist/' }
+        ]
+      }
     },
 
     css_combo: {
@@ -25,23 +35,25 @@ module.exports = function(grunt) {
     },
 
     requirejs: {
-      compile: {
+      build: {
         options: {
-          appDir: 'scripts',
-          dir: 'dist/scripts',
-          baseUrl: './',
+          appDir: 'scripts/',
+          dir: 'dist/scripts/',
           mainConfigFile: 'scripts/config.js',
           paths: {
-            jquery: 'lib/jquery'
+            jquery: 'jquery'
+            // jquery: 'empty:'
           },
-          findNestedDependencies: true,
           modules: [
-            {name: 'app/main/common'},
-            {name: 'app/main/accordion'},
-            {name: 'app/main/dialog'},
-            {name: 'app/main/tab'},
-            {name: 'app/main/table'}
-          ]
+            { name: 'app/main/index' },
+            { name: 'app/main/accordion' },
+            { name: 'app/main/dialog' },
+            { name: 'app/main/form' },
+            { name: 'app/main/panel' },
+            { name: 'app/main/tab' },
+            { name: 'app/main/table' }
+          ],
+          removeCombined: true
         }
       }
     },
@@ -64,14 +76,9 @@ module.exports = function(grunt) {
     },
 
     watch: {
-      options: {
-        nospawn: true
-      },
-
       livereload: {
-        files: ['*'],
-        tasks: 'default',
-        options: { livereload: true }
+        options: { livereload: true },
+        files: ['**/*']
       }
     }
   });
@@ -79,7 +86,10 @@ module.exports = function(grunt) {
   // Load the plugin.
   // grunt.loadNpmTasks('grunt-contrib-csslint');
   // grunt.loadNpmTasks('grunt-contrib-jshint');
+  // grunt.loadNpmTasks('grunt-kss');
+  // grunt.loadNpmTasks('grunt-jsdoc');
   grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-css-combo');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-requirejs');
@@ -87,8 +97,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-open');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
-  // Default task(s).
+  // Task(s).
   grunt.registerTask('default', ['connect:server', 'open:dev', 'watch:livereload']);
-  grunt.registerTask('build', ['clean', 'css_combo', 'cssmin', /* 'requirejs', */'connect:server', 'open:build', 'watch:livereload']);
+  grunt.registerTask('build', ['clean:build', 'css_combo', 'cssmin', 'requirejs:build', 'copy:build', 'connect:server', 'open:build']);
 
 };

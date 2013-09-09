@@ -30,6 +30,11 @@ require(['jquery'], function($) {
     $window.trigger('loaded');
   });
 
+  // artDialog 对话框全局配置
+  (function (config) {
+      config['padding'] = '10px';
+  })(art.dialog.defaults);
+
   $.fn.chosen && $('.chosen-select').chosen();
 
   /**

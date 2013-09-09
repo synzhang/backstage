@@ -14,7 +14,7 @@ require.config({
     'jquery.accordion': { deps: ['jquery'] },
     'jquery.calendar': { deps: ['jquery', 'jscal2'] },
     'jquery.chosen': { deps: ['jquery'] },
-    'jquery.dialog': { deps: ['jquery', 'artDialog/artDialog'] },
+    'jquery.dialog': { deps: ['jquery', 'artDialog/artDialog', 'artDialog/plugins/iframeTools'] },
     'jquery.fixedHead': { deps: ['jquery'] },
     'jquery.tab': { deps: ['jquery'] },
     'jquery.validator': { deps: ['jquery'] }

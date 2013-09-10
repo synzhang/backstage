@@ -1,0 +1,7 @@
+/*! Copyright (c) 2013 Brandon Aaron (http://brandonaaron.net)
+ * Licensed under the MIT License (LICENSE.txt).
+ *
+ * Version 3.0.0
+ */
+
+(function(e){typeof define=="function"&&define.amd?define(["jquery"],e):e(jQuery)})(function(e){function t(e){return e&&e.constructor===Number?e+"px":e}e.fn.bgiframe=function(n){n=e.extend({top:"auto",left:"auto",width:"auto",height:"auto",opacity:!0,src:"javascript:false;",conditional:/MSIE 6.0/.test(navigator.userAgent)},n);if(!e.isFunction(n.conditional)){var r=n.conditional;n.conditional=function(){return r}}var i=e('<iframe class="bgiframe"frameborder="0"tabindex="-1"src="'+n.src+'"'+'style="display:block;position:absolute;z-index:-1;"/>');return this.each(function(){var r=e(this);if(n.conditional(this)===!1)return;var o=r.children("iframe.bgiframe"),u=o.length===0?i.clone():o;u.css({top:n.top=="auto"?(parseInt(r.css("borderTopWidth"),10)||0)*-1+"px":t(n.top),left:n.left=="auto"?(parseInt(r.css("borderLeftWidth"),10)||0)*-1+"px":t(n.left),width:n.width=="auto"?this.offsetWidth+"px":t(n.width),height:n.height=="auto"?this.offsetHeight+"px":t(n.height),opacity:n.opacity===!0?0:undefined}),o.length===0&&r.prepend(u)})},e.fn.bgIframe=e.fn.bgiframe});

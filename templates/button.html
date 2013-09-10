@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Backstage</title>
+  <link rel="stylesheet" href="../styles/backstage.css" />
+  <script>
+    (function() {
+      var html = document.getElementsByTagName('html')[0];
+      html.className = html.className.replace('no-js', 'js');
+    })();
+  </script>
+</head>
+<body>
+  <div class="container">
+    <div class="panel panel-info grid-6">
+      <h5 class="panel_head">普通按钮：</h5>
+      <div class="panel_body">
+        <a class="button" href="javascript:;">普通按钮(a.button)</a>
+        <a class="button is-button-disabled" href="javascript:;">普通按钮（未激活）(a.button)</a>
+        <hr class="rule">
+        <button class="button">普通按钮(button.button)</button>
+        <button class="button is-button-disabled" disabled>普通按钮（未激活）(button.button)</button>
+        <hr class="rule">
+        <input class="button" type="button" value="普通按钮(input.button)" />
+        <input class="button is-button-disabled" type="button" value="普通按钮（未激活）(input.button)" disabled />
+      </div>
+    </div>
+    <div class="panel panel-info grid-6">
+      <h5 class="panel_head">主要按钮：</h5>
+      <div class="panel_body">
+        <a class="button button-primary" href="javascript:;">主要按钮(a.button)</a>
+        <a class="button button-primary is-button-primary-disabled" href="javascript:;">主要按钮（未激活）(a.button)</a>
+        <hr class="rule">
+        <button class="button button-primary">主要按钮(button.button)</button>
+        <button class="button button-primary is-button-primary-disabled" disabled>主要按钮（未激活）(button.button)</button>
+        <hr class="rule">
+        <input class="button button-primary" type="button" value="主要按钮(input.button)" />
+        <input class="button button-primary is-button-primary-disabled" type="button" value="主要按钮（未激活）(input.button)" disabled />
+      </div>
+    </div>
+    <div class="panel panel-info grid-6">
+      <h5 class="panel_head">危险按钮：</h5>
+      <div class="panel_body">
+        <a class="button button-danger" href="javascript:;">危险按钮(a.button)</a>
+        <a class="button button-danger is-button-danger-disabled" href="javascript:;">危险按钮（未激活）(a.button)</a>
+        <hr class="rule">
+        <button class="button button-danger">危险按钮(button.button)</button>
+        <button class="button button-danger is-button-danger-disabled" disabled>危险按钮（未激活）(button.button)</button>
+        <hr class="rule">
+        <input class="button button-danger" type="button" value="危险按钮(input.button)" />
+        <input class="button button-danger is-button-danger-disabled" type="button" value="危险按钮（未激活）(input.button)" disabled />
+      </div>
+    </div>
+  </div><!-- / .container -->
+</body>
+</html>

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Backstage</title>
+  <link rel="stylesheet" href="../styles/backstage.css" />
+  <script>
+    (function() {
+      var html = document.getElementsByTagName('html')[0];
+      html.className = html.className.replace('no-js', 'js');
+    })();
+  </script>
+</head>
+<body>
+  <div class="container">
+    <form class="form" action="" method="post">
+      <fieldset>
+        <legend>字段集名称</legend>
+        <table class="table table-form table-fluid">
+          <tbody>
+            <tr class="form-item">
+              <th class="form-key">
+                <label for="text">文本：</label>
+              </th>
+              <td class="form-value">
+                <input
+                  id="text"
+                  class="text-input grid-3"
+                  type="text"
+                  required
+                  data-parent=".form-item"
+                  data-validation-empty="请填写文本"
+                  data-validation-placement="right" />
+              </td>
+            </tr>
+            <tr class="form-item">
+              <th class="form-key">
+                <label for="number">数字：</label>
+              </th>
+              <td class="form-value">
+                <input
+                  id="number"
+                  class="text-input grid-3"
+                  type="text"
+                  required
+                  data-type="number"
+                  data-parent=".form-item"
+                  data-validation-empty="请填写数字"
+                  data-validation-error="数字有误，请重新填写"
+                  data-validation-placement="right" />
+              </td>
+            </tr>
+            <tr class="form-item">
+              <th class="form-key">
+                <label for="tel">电话号码：</label>
+              </th>
+              <td class="form-value">
+                <input
+                  id="tel"
+                  class="text-input grid-3"
+                  type="text"
+                  required
+                  data-type="tel"
+                  data-parent=".form-item"
+                  data-validation-empty="请填写电话号码"
+                  data-validation-error="电话号码有误，请重新填写"
+                  data-validation-placement="right" />
+              </td>
+            </tr>
+            <tr class="form-item">
+              <th class="form-key">
+                <label for="mobile">手机号码：</label>
+              </th>
+              <td class="form-value">
+                <input
+                  id="mobile"
+                  class="text-input grid-3"
+                  type="tel"
+                  required
+                  data-type="mobile"
+                  data-parent=".form-item"
+                  data-validation-empty="请填写手机号码"
+                  data-validation-error="手机号码有误，请重新填写"
+                  data-validation-placement="right" />
+              </td>
+            </tr>
+            <tr class="form-item">
+              <th class="form-key">
+                <label for="idcard">身份证：</label>
+              </th>
+              <td class="form-value">
+                <input
+                  id="idcard"
+                  class="text-input grid-3"
+                  type="text"
+                  required
+                  data-type="idcard"
+                  data-parent=".form-item"
+                  data-validation-empty="请填写身份证"
+                  data-validation-error="身份证有误，请重新填写"
+                  data-validation-placement="right" />
+              </td>
+            </tr>
+            <tr class="form-item">
+              <th class="form-key">
+                <label for="email">Email：</label>
+              </th>
+              <td class="form-value">
+                <input
+                  id="email"
+                  class="text-input grid-3"
+                  type="email"
+                  required
+                  data-parent=".form-item"
+                  data-validation-empty="请填写Email"
+                  data-validation-error="Email有误，请重新填写"
+                  data-validation-placement="right" />
+              </td>
+            </tr>
+            <tr class="form-item">
+              <th class="form-key">
+                <label for="qq">QQ：</label>
+              </th>
+              <td class="form-value">
+                <input
+                  id="qq"
+                  class="text-input grid-3"
+                  type="text"
+                  required
+                  data-type="qq"
+                  data-parent=".form-item"
+                  data-validation-empty="请填写QQ"
+                  data-validation-error="QQ有误，请重新填写"
+                  data-validation-placement="right" />
+              </td>
+            </tr>
+            <tr class="form-item">
+              <th class="form-key">
+                <label for="ip">IP：</label>
+              </th>
+              <td class="form-value">
+                <input
+                  id="ip"
+                  class="text-input grid-3"
+                  type="text"
+                  required
+                  data-type="ip"
+                  data-parent=".form-item"
+                  data-validation-empty="请填写IP"
+                  data-validation-error="IP有误，请重新填写"
+                  data-validation-placement="right" />
+              </td>
+            </tr>
+            <tr class="form-item">
+              <th class="form-key">
+                <label for="zipcode">邮政编码：</label>
+              </th>
+              <td class="form-value">
+                <input
+                  id="zipcode"
+                  class="text-input grid-3"
+                  type="text"
+                  required
+                  data-type="zipcode"
+                  data-parent=".form-item"
+                  data-validation-empty="请填写邮政编码"
+                  data-validation-error="邮政编码有误，请重新填写"
+                  data-validation-placement="right" />
+              </td>
+            </tr>
+            <tr class="form-item">
+              <th class="form-key">
+                <label for="password">密码：</label>
+              </th>
+              <td class="form-value">
+                <input
+                  id="password"
+                  class="text-input grid-3"
+                  type="password"
+                  required />
+                  <small class="typo-info"><i class="icon icon-info-sign"></i>&nbsp;至少包含字母和数字，最短8个字符，区分大小写</small>
+              </td>
+            </tr>
+            <tr class="form-item">
+              <th class="form-key">
+                <label for="passwordComfirm">重复密码：</label>
+              </th>
+              <td class="form-value">
+                <input
+                  id="passwordComfirm"
+                  class="text-input grid-3"
+                  type="password"
+                  required />
+              </td>
+            </tr>
+            <tr class="form-item">
+              <th class="form-key">
+                <label for="select">下拉菜单：</label>
+              </th>
+              <td class="form-value">
+                <select
+                  id="select"
+                  class="grid-3"
+                  required
+                  data-validation-empty="请选择一个选项"
+                  data-validation-placement="right">
+                    <option value="0">选项一</option>
+                    <option value="1">选项二</option>
+                    <option value="2">选项三</option>
+                </select>
+              </td>
+            </tr>
+            <tr class="form-item">
+              <th class="form-key">
+                <label>复选框：</label>
+              </th>
+              <td class="form-value">
+                <label><input type="checkbox" value="1" />&nbsp;选项一</label>
+                &nbsp;&nbsp;
+                <label><input type="checkbox" value="2" />&nbsp;选项二</label>
+              </td>
+            </tr>
+            <tr class="form-item">
+              <th class="form-key">
+                <label>单选框：</label>
+              </th>
+              <td class="form-value">
+                <label><input type="radio" name="status" value="1" />&nbsp;开启</label>
+                &nbsp;&nbsp;
+                <label><input type="radio" name="status" value="0" />&nbsp;关闭</label>
+              </td>
+            </tr>
+            <tr class="form-item">
+              <th class="form-key">
+                <label for="textarea">文本区域：</label>
+              </th>
+              <td class="form-value">
+                <textarea name="" id="textarea" cols="30" rows="10"></textarea>
+                <br>
+                <small class="typo-info"><i class="icon icon-info-sign"></i>&nbsp;提示文字</small>
+              </td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td></td>
+              <td>
+                <input class="button" type="submit" value="提交" />
+              </td>
+            </tr>
+          </tfoot>
+        </table>
+      </fieldset>
+    </form>
+  </div><!-- / .container -->
+
+  <script src="../scripts/lib/require.js"></script>
+  <script>
+    require(['../scripts/config'], function(config) {
+      require(['app/main/form']);
+    });
+  </script>
+</body>
+</html>

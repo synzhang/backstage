@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Backstage</title>
+  <link rel="stylesheet" href="../styles/backstage.css" />
+  <link rel="stylesheet" href="../scripts/lib/jscal2/css/jscal2.css" />
+  <link rel="stylesheet" href="../scripts/lib/jscal2/css/win2k/win2k.css" />
+  <link rel="stylesheet" href="../scripts/lib/chosen/chosen.css" />
+  <script>
+    (function() {
+      var html = document.getElementsByTagName('html')[0];
+      html.className = html.className.replace('no-js', 'js');
+    })();
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h2>公告栏</h2>
+
+    <div class="row">
+      <div class="panel panel-info grid grid-5">
+        <h5 class="panel_head">温馨提示：</h5>
+        <div class="panel_body">
+          <p>温馨提示内容。</p>
+        </div>
+      </div>
+      <div class="panel panel-info grid grid-5">
+        <div class="panel_head clearfix">
+          <h5 class="unstyle-margin fleft">温馨提示：</h5>
+          <a class="fright" href="#">更多&nbsp;&gt;&gt;</a>
+        </div>
+        <div class="panel_body">
+          <p>温馨提示内容。</p>
+        </div>
+      </div>
+    </div>
+
+    <hr class="rule">
+
+    <h2>控制面板</h2>
+
+    <form class="panel panel-ctrl">
+      <fieldset>
+        <label>日期：</label>
+        <input class="text-input"
+          id="start_addtime"
+          data-toggle="calendar"
+          data-input-field="start_addtime"
+          data-trigger="start_addtime"
+          type="text"
+          size="10"
+          placeholder="开始日期"
+          readonly />
+        &nbsp;-&nbsp;
+        <input class="text-input"
+          id="end_addtime"
+          data-toggle="calendar"
+          data-input-field="end_addtime"
+          data-trigger="end_addtime"
+          type="text"
+          size="10"
+          placeholder="截止日期"
+          readonly />
+
+        <span class="rule-inline">|</span>
+
+        <label for="select">下拉菜单：</label>
+        <select id="select">
+          <option value="1">选项一</option>
+          <option value="2">选项二</option>
+          <option value="3">选项三</option>
+        </select>
+
+        <span class="rule-inline">|</span>
+
+        <input class="text-input grid-2" type="text" placeholder="搜索提示信息" />
+
+        <button class="button js-loading-trigger" type="submit">查询</button>
+      </fieldset>
+    </form>
+
+    <form class="panel panel-ctrl">
+      <fieldset>
+        <label>单选项：</label>
+        <label><input type="radio" name="radio">&nbsp;单选项一</label>&nbsp;&nbsp;
+        <label><input type="radio" name="radio">&nbsp;单选项二</label>&nbsp;&nbsp;
+        <label><input type="radio" name="radio">&nbsp;单选项三</label>&nbsp;&nbsp;
+
+        <span class="rule-inline">|</span>
+
+        <label>复选项：</label>
+        <label><input type="checkbox">&nbsp;复选项一</label>&nbsp;&nbsp;
+        <label><input type="checkbox">&nbsp;复选项二</label>&nbsp;&nbsp;
+        <label><input type="checkbox">&nbsp;复选项三</label>&nbsp;&nbsp;
+
+        <span class="rule-inline">|</span>
+
+        <label>标签：</label>
+        <a class="tag is-tag-on" href="#">标签一</a>
+        <a class="tag" href="#">标签二</a>
+        <a class="tag" href="#">标签三</a>
+      </fieldset>
+      <fieldset>
+        <input class="text-input grid-4" type="text" placeholder="搜索提示信息" />
+        <button class="button js-loading-trigger" type="submit">查询</button>
+      </fieldset>
+    </form>
+
+    <div class="clearfix">
+      <form class="panel panel-ctrl fleft">
+        <fieldset>
+          <label>下拉菜单：</label>
+          <select class="chosen-select grid-2" data-placeholder="请选择一个选项">
+            <option value="1">选项一</option>
+            <option value="2">选项二</option>
+            <option value="3">选项三</option>
+          </select>
+
+          <span class="rule-inline">|</span>
+
+          <input class="text-input grid-3" type="text" placeholder="搜索提示信息" />
+
+          <button class="button js-loading-trigger" type="submit">查询</button>
+        </fieldset>
+      </form>
+
+      <div class="panel fright">
+        <a class="button button-primary" href="#">新增</a>
+        <a class="button button-danger" href="#">删除</a>
+      </div>
+    </div>
+  </div><!-- / .container -->
+
+  <div class="loading" style="display: none;">正在加载...</div><!-- / #loading -->
+
+  <script src="../scripts/lib/require.js"></script>
+  <script>
+    require(['../scripts/config'], function(config) {
+      require(['app/main/panel']);
+    });
+  </script>
+</body>
+</html>

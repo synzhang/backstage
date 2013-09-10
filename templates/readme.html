@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0053)file:///C:/users/admini~1/appdata/local/temp/103.html -->
+<!-- saved from url=(0052)file:///C:/users/admini~1/appdata/local/temp/78.html -->
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="utf-8"><style>html { font-size: 100%; overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
 
 body{
@@ -124,7 +124,7 @@ body{font-size:16px;}
 }
 </style><title>readme</title></head><body><h1 id="backstage">Backstage</h1>
 <h2 id="_1">简介</h2>
-<p>借用 PHPCMS 设计风格开发的管理后台模版。[<a href="https://github.com/SynZhang/backstage">GitHub</a>]</p>
+<p>借用 PHPCMS 设计风格开发的管理后台 UI 模版。[<a href="https://github.com/SynZhang/backstage">GitHub</a>][<a href="https://github.com/SynZhang/backstage/archive/master.zip">下载</a>]</p>
 <h3 id="_2">浏览器支持</h3>
 <ul>
 <li>Chrome (Mac, Windows)</li>
@@ -139,9 +139,9 @@ body{font-size:16px;}
 <h3 id="_5">目录结构</h3>
 <pre><code>    backstage/
     ├── dist/ ----------------------------------- 构建目录
-    │   ├── images/ ----------------------------- 图片目录
-    │   ├── scripts/ ---------------------------- JavaScript 脚本目录
-    │   ├── styles/ ----------------------------- CSS 样式目录
+    │   ├── images/ ----------------------------- 已构建图片目录
+    │   ├── scripts/ ---------------------------- 已构建 JavaScript 脚本目录
+    │   ├── styles/ ----------------------------- 已构建 CSS 样式目录
     │   ├── index.html -------------------------- 首页
     ├── images/ --------------------------------- 图片目录
     ├── node_modules/ --------------------------- Node.js 模块目录
@@ -201,7 +201,21 @@ Styleguide 0.0.0. || No styleguide reference.
  */
 </code></pre>
 <p>详细的标签使用建议参考 Google JavaScript Style Guide 中的 <a href="http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml#Comments">Comments</a> 章节。</p>
-<h3 id="_8">建议设计模式</h3>
+<h3 id="_8">设计模式</h3>
+<p>为了合理分离内容、样式、行为，建议采用如下设计模式。</p>
+<h4 id="html_1">HTML</h4>
+<pre><code>&lt;div class="component" data-attribute="value"&gt;
+  &lt;div class="component_module"&gt;
+    ...
+  &lt;/div&gt;
+&lt;/div&gt;&lt;!-- / .component --&gt;
+
+&lt;div class="component component-modifier" data-attribute="value"&gt;
+  &lt;div class="component_module is-state"&gt;
+    ...
+  &lt;/div&gt;
+&lt;/div&gt;&lt;!-- / .component-modifier --&gt;
+</code></pre>
 <h4 id="css_1">CSS 组件</h4>
 <pre><code>.component --------------------------------- 组件
 .component_module -------------------------- 组件子模块
@@ -214,11 +228,7 @@ Styleguide 0.0.0. || No styleguide reference.
 <pre><code>.is-component_module-modifier
 </code></pre>
 <h4 id="jquery">jQuery 插件</h4>
-<p>Bootstrap 的 <a href="http://getbootstrap.com/javascript/">Data-API</a> 模式能有效分离内容、样式、行为。</p>
-<p>HTML:</p>
-<pre><code>&lt;element attribute="value" data-attribute="value"&gt;&lt;/element&gt;
-</code></pre>
-<p>JavaScript:</p>
+<p>参照 Bootstrap 的 <a href="http://getbootstrap.com/javascript/">Data-API</a> 模式。</p>
 <pre><code>(function($) {
 
   // Module Public Class Definition
@@ -289,7 +299,30 @@ Styleguide 0.0.0. || No styleguide reference.
 <p>建立项目前请确认已安装 <a href="http://nodejs.org/">Node.js</a>、 <a href="http://gruntjs.com/">Grunt</a> 。</p>
 <p>在终端中切换至项目目录，然后根据任务运行如下命令：</p>
 <ul>
-<li>项目初始化-安装 NPM 模块： <code>npm install</code></li>
-<li>开发－启动 Web 服务器，实时监测项目目录中的文件更新并刷新浏览器：<code>grunt</code></li>
-<li>构建发布版本－校验 CSS、JavaScript，合并压缩 CSS 、JavaScript 模块：<code>grunt build</code></li>
+<li>
+<p>项目初始化： <code>npm install</code></p>
+<ol>
+<li>安装 NPM 模块</li>
+</ol>
+</li>
+<li>
+<p>开发：<code>grunt</code></p>
+<ol>
+<li>启动 Web 服务器</li>
+<li>在浏览器中打开源代码首页</li>
+<li>实时监测项目目录中的文件更新并刷新浏览器</li>
+</ol>
+</li>
+<li>
+<p>构建发布版本：<code>grunt build</code></p>
+<ol>
+<li>清空 dist 目录</li>
+<li>校验 CSS、JavaScript @todo</li>
+<li>合并压缩 CSS 模块</li>
+<li>合并压缩 JavaScript 模块</li>
+<li>复制 images 目录与 index.html 到 dist 目录</li>
+<li>启动 Web 服务器</li>
+<li>在浏览器中打开构建目录中的首页</li>
+</ol>
+</li>
 </ul></body></html>

@@ -2,7 +2,7 @@
 
 ## 简介
 
-  借用 PHPCMS 设计风格开发的管理后台模版。[[GitHub](https://github.com/SynZhang/backstage)]
+  借用 PHPCMS 设计风格开发的管理后台 UI 模版。[[GitHub](https://github.com/SynZhang/backstage)][[下载](https://github.com/SynZhang/backstage/archive/master.zip)]
 
 ### 浏览器支持
 
@@ -23,9 +23,9 @@
 ```
     backstage/
     ├── dist/ ----------------------------------- 构建目录
-    │   ├── images/ ----------------------------- 图片目录
-    │   ├── scripts/ ---------------------------- JavaScript 脚本目录
-    │   ├── styles/ ----------------------------- CSS 样式目录
+    │   ├── images/ ----------------------------- 已构建图片目录
+    │   ├── scripts/ ---------------------------- 已构建 JavaScript 脚本目录
+    │   ├── styles/ ----------------------------- 已构建 CSS 样式目录
     │   ├── index.html -------------------------- 首页
     ├── images/ --------------------------------- 图片目录
     ├── node_modules/ --------------------------- Node.js 模块目录
@@ -94,7 +94,23 @@
 
   详细的标签使用建议参考 Google JavaScript Style Guide 中的 [Comments](http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml#Comments) 章节。
 
-### 建议设计模式
+### 设计模式
+
+  为了合理分离内容、样式、行为，建议采用如下设计模式。
+
+#### HTML
+
+    <div class="component" data-attribute="value">
+      <div class="component_module">
+        ...
+      </div>
+    </div><!-- / .component -->
+
+    <div class="component component-modifier" data-attribute="value">
+      <div class="component_module is-state">
+        ...
+      </div>
+    </div><!-- / .component-modifier -->
 
 #### CSS 组件
 
@@ -111,13 +127,7 @@
 
 #### jQuery 插件
 
-  Bootstrap 的 [Data-API](http://getbootstrap.com/javascript/) 模式能有效分离内容、样式、行为。
-
-  HTML:
-
-    <element attribute="value" data-attribute="value"></element>
-
-  JavaScript:
+  参照 Bootstrap 的 [Data-API](http://getbootstrap.com/javascript/) 模式。
 
     (function($) {
 
@@ -191,6 +201,19 @@
 
   在终端中切换至项目目录，然后根据任务运行如下命令：
 
-  * 项目初始化-安装 NPM 模块： `npm install`
-  * 开发－启动 Web 服务器，实时监测项目目录中的文件更新并刷新浏览器：`grunt`
-  * 构建发布版本－校验 CSS、JavaScript，合并压缩 CSS 、JavaScript 模块：`grunt build`
+  * 项目初始化： `npm install`
+    0. 安装 NPM 模块
+
+  * 开发：`grunt`
+    0. 启动 Web 服务器
+    0. 在浏览器中打开源代码首页
+    0. 实时监测项目目录中的文件更新并刷新浏览器
+
+  * 构建发布版本：`grunt build`
+    0. 清空 dist 目录
+    0. 校验 CSS、JavaScript @todo
+    0. 合并压缩 CSS 模块
+    0. 合并压缩 JavaScript 模块
+    0. 复制 images 目录与 index.html 到 dist 目录
+    0. 启动 Web 服务器
+    0. 在浏览器中打开构建目录中的首页

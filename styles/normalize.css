@@ -125,7 +125,9 @@ a:hover {
 
 body, button, input, select, textarea {
   color: #444;
-  font: 12px / 1.62 Helvetica,Arial,sans-serif;
+  font-size: 12px;
+  font-family: 'adelle','Georgia', 'Hiragino Sans GB',Arial,'STXihei', 'Microsoft YaHei', sans-serif;
+  line-height: 1.62;
 }
 
 /**

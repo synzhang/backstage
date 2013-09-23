@@ -41,8 +41,7 @@ module.exports = function(grunt) {
           dir: 'dist/scripts/',
           mainConfigFile: 'scripts/config.js',
           paths: {
-            jquery: 'jquery'
-            // jquery: 'empty:'
+            jquery: 'http://cdn.staticfile.org/jquery/1.10.2/jquery.min'
           },
           modules: [
             { name: 'app/main/index' },
@@ -59,19 +58,26 @@ module.exports = function(grunt) {
     },
 
     connect: {
-      server: {
+      develop: {
         options: {
-          port: 9001
+          port: 9001,
+          base: '.'
+        }
+      },
+      build: {
+        options: {
+          port: 9002,
+          base: 'dist'
         }
       }
     },
 
     open: {
       dev: {
-        path: 'http://localhost:<%= connect.server.options.port %>'
+        path: 'http://localhost:<%= connect.develop.options.port %>'
       },
       build: {
-        path: 'http://localhost:<%= connect.server.options.port %>/dist/index.html'
+        path: 'http://localhost:<%= connect.develop.options.port %>/dist/index.html'
       }
     },
 
@@ -98,7 +104,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
 
   // Task(s).
-  grunt.registerTask('default', ['connect:server', 'open:dev', 'watch:livereload']);
-  grunt.registerTask('build', ['clean:build', 'css_combo', 'cssmin', 'requirejs:build', 'copy:build', 'connect:server', 'open:build']);
+  grunt.registerTask('default', ['connect:develop', 'open:dev', 'watch:livereload']);
+  grunt.registerTask('build', ['clean:build', 'css_combo', 'cssmin', 'requirejs:build', 'copy:build', 'connect:build', 'open:build']);
 
 };

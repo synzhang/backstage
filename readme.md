@@ -2,7 +2,7 @@
 
 ## 简介
 
-  借用 PHPCMS 设计风格开发的管理后台 UI 模版。[[GitHub](https://github.com/SynZhang/backstage)][[下载](https://github.com/SynZhang/backstage/archive/master.zip)]
+  借用 PHPCMS 设计风格开发的管理后台 UI。[[GitHub](https://github.com/SynZhang/backstage)][[下载](https://github.com/SynZhang/backstage/archive/master.zip)]
 
 ### 浏览器支持
 
@@ -31,7 +31,7 @@
     ├── node_modules/ --------------------------- Node.js 模块目录
     │   ├── *.* --------------------------------- Node.js 模块
     ├── scripts/ -------------------------------- JavaScript 脚本目录
-    │   ├── app/ -------------------------------- backstage JavaScript 模块目录
+    │   ├── app/ -------------------------------- Backstage JavaScript 模块目录
     │   │   ├── main/ --------------------------- 各个 Page 主入口 JavaScript目录
     │   │   │   ├── common.js ------------------- 主入口 JavaScript 中的通用代码
     │   │   │   ├── *.js ------------------------ 主入口 JavaScript
@@ -96,7 +96,7 @@
 
 ### 设计模式
 
-  为了合理分离内容、样式、行为，建议采用如下设计模式。
+  为了合理划分组件并分离内容、样式、行为，建议采用如下设计模式。
 
 #### HTML
 
@@ -121,9 +121,7 @@
     .js-hook ----------------------------------- JavaScript 专属钩子
     .shame-classname --------------------------- 补丁（统一放在 styles/shame.css 中，详细注释并定期修复）
 
-  由于 IE 6 不支持部分常用选择器（如：子选择器 .foo > .bar ，链式选择器 .foo.bar 等），因此采用以下命名方式填补不足：
-
-    .is-component_module-modifier
+  由于 IE 6 不支持部分常用选择器（如：子选择器 .foo > .bar ，链式选择器 .foo.bar 等），导致无法使用 `.component_module.is-state`，因此采用`.is-component_module-state`命名约定来填补不足。
 
 #### jQuery 插件
 
